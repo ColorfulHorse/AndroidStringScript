@@ -1,0 +1,21 @@
+plugins {
+    id 'java-library'
+    id 'kotlin'
+}
+
+java {
+    sourceCompatibility = JavaVersion.VERSION_1_7
+    targetCompatibility = JavaVersion.VERSION_1_7
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:1.5.20"
+    implementation 'org.apache.poi:poi:4.1.0'
+    implementation 'org.apache.poi:poi-ooxml-schemas:4.1.0'
+    implementation 'org.apache.poi:poi-ooxml:4.1.0'
+    implementation("org.apache.commons:commons-csv:1.8")
+}
+
+tasks.withType(JavaCompile){
+    options.encoding = "UTF-8"
+}
