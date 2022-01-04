@@ -30,7 +30,7 @@ fun main() {
         // 将资源转换格式 <中文，<语言目录，值>>
         val resData = WordHelper.transformResData(hashMap)
 
-        ExcelHelper.resource2File("./module_string_script/strings.xlsx",
+        ExcelHelper.resource2File("./module_string_scripts/strings.xlsx",
                 it.name,
                 hashMap.keys.toList() as ArrayList<String>,
                 resData,excelWBook,index,(moduleDirList.size-1)

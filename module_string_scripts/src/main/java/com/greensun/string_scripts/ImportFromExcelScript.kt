@@ -1,9 +1,19 @@
 package com.greensun.string_scripts
 
+import com.greensun.string_scripts.bean.AndroidStringBean
 import com.greensun.string_scripts.helper.ExcelHelper
 import com.greensun.string_scripts.helper.WordHelper
 import com.greensun.string_scripts.logger.Log
 import java.io.File
+
+// 是否只导入指定语言
+const val useInclude = true
+// 指定语言
+val importInclude = listOf<String>(
+    "values-ja-rJP",
+    "values-ko-rKR",
+    "values-ar"
+)
 
 /**
  * 从excel导入string
@@ -22,7 +32,7 @@ fun main() {
     }
     // 打印相关可以使用的模块
     Log.i("ImportFromExcelScript", moduleDirList?.map { it.name }.toString())
-    val filePath = "./module_language_scripts/strings.xlsx"
+    val filePath = "./module_string_scripts/strings.xlsx"
     val sheetsData = ExcelHelper.getSheetsData(filePath)
 
     moduleDirList.forEach {
@@ -38,6 +48,11 @@ fun main() {
             // 移除第一行
             resData.remove("")
             resMap = WordHelper.revertResData(resData)
+            if (useInclude) {
+                resMap = resMap.filterKeys { lang ->
+                    importInclude.contains(lang)
+                } as LinkedHashMap<String, LinkedHashMap<String, AndroidStringBean>>
+            }
             WordHelper.importWords(resMap, parentFile)
         }
     }
