@@ -45,8 +45,6 @@ fun main() {
             // 将资源转换格式 <name，<语言目录，值>>
             val resData = WordHelper.transformResData(resMap)
             WordHelper.mergeStringData(newData, resData)
-            // 移除第一行
-            resData.remove("")
             resMap = WordHelper.revertResData(resData)
             if (useInclude) {
                 resMap = resMap.filterKeys { lang ->
