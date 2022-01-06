@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+<resources>
     <string name="cruise_exit_save">Cruise mode protection</string>
     <string name="deliver_exit_save">Delivery mode protection</string>
     <string name="greeter_exit_save">Ushering mode protection</string>
@@ -129,7 +128,6 @@
     <string name="escorting_finish_time">Auto complete time of ushering (1~30s)</string>
     <string name="bumper_title">Cut off the anti-collision bar signal</string>
     <string name="bumper_desc">Only for temporary use when spare parts cannot be replaced, please operate with caution</string>
-    <!--默认所有的都用这个提示，不进行语言变换-->
     <string name="locked_machine_tip">设备已被锁定，请联系技术支持处理\nDevice is locked.Please contact technical support.</string>
     <string name="locked_machine_phone">400-0826-660</string>
     <string name="mandatory_networking">Network is required</string>
@@ -138,7 +136,6 @@
     <string name="usher_voice_play_mode">Usher voice playing mode</string>
     <string name="usher_voice_play_mode_1">Recognize human playback voice</string>
     <string name="usher_voice_play_mode_2">Looping voice</string>
-    <!--  生日模式设置页面  -->
     <string name="birthday_music_set_tip">Dot matrix screen text content</string>
     <string name="birthday_music_set_sub_tip">After modification, the text content will be displayed on the dot matrix screen, up to 50 characters, only valid for a single time</string>
     <string name="birthday_music_set_tip2">Play music during delivery</string>

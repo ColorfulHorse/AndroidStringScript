@@ -1,11 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
-    <string name="box_notification">Özel oda bildirimi</string>
-    <string name="box_notification_settings">Özel oda bildirim ayarları</string>
+<resources>
     <string name="cruise_exit_save">Gezinti çıkışı koruması</string>
     <string name="deliver_exit_save">Teslimat çıkışı koruması</string>
     <string name="greeter_exit_save">Refakatçi çıkışı koruması</string>
     <string name="setting_enter_save">Erişim korumasını ayarlanıyor</string>
+    <string name="box_notification_settings">Özel oda bildirim ayarları</string>
+    <string name="box_notification">Özel oda bildirimi</string>
     <string name="dialog_swith_lora_channel">Açma</string>
     <string name="toast_lora_channel_swith_failed">Açma başarısız oldu. Lütfen tekrar deneyin.</string>
     <string name="box_setting_add_beeper">Sesli uyarı ekle</string>
@@ -14,25 +13,28 @@
     <string name="box_settings_call_list">Sesli uyarı listesi</string>
     <string name="box_settings_del_beeper">Sil</string>
     <string name="order_delivery">Ardışık teslimat modu</string>
-    <string name="has_bind">Bağlı</string>
+    <string name="please_enter_text">Metin gir</string>
     <string name="greeter_speed">Refakat hızı </string>
+    <string name="has_bind">Bağlı</string>
     <string name="un_bind">Bağlı değil</string>
     <string name="un_select">Seçili değil</string>
     <string name="delete_success">Başarıyla silindi</string>
     <string name="add_success">Başarıyla eklendi</string>
     <string name="sure_success">Bağlantıyı kesmeyi onayla</string>
+    <string name="box_delete_text">Silinsin mi?</string>
+    <string name="box_delete_yes">Evet</string>
+    <string name="box_delete_no">Hayır</string>
+    <string name="stay_point_setting_notice">Gezinti sırasında bekleme konumu</string>
+    <string name="custom_voice_most_10">En fazla 10 özel sesli mesaj eklenebilir.</string>
     <string name="lost_localization_laser_locate_lose">Konumlandırma hatası. Robotu başlangıç konumuna taşıyın ve tekrar denemek için yeniden başlatın.</string>
     <string name="abnormal_signs">Yanlış işaret. Beni doğru bir işarete taşıyın.</string>
-    <string name="second">sn</string>
-    <string name="stay_point_setting">Bekleme konumu ayarları</string>
-    <string name="stay_point_setting_notice">Gezinti sırasında bekleme konumu</string>
     <string name="pause_time_format">%1$s M %2$s S</string>
     <string name="please_input_custom_voice">Özel ses girin</string>
     <string name="please_input_copy_write">Ekran metni girin</string>
     <string name="timer_minute">Dakika</string>
     <string name="stay_point_timer">%1$s:%2$s</string>
     <string name="call_freeze_time">Çağrı Dondurma sonrasında otomatik sürdürme süresi (0 - 300 sn)</string>
-    <string name="custom_voice_most_10">En fazla 10 özel sesli mesaj eklenebilir.</string>
+    <string name="stay_point_setting">Bekleme konumu ayarları</string>
     <string name="Still_need_to_modify">Yine de değiştir</string>
     <string name="stay_point_timer_be_overwrite">Bu ayar, orijinal bekleme süresinin üzerine yazacaktır.</string>
     <string name="stay_point_screen_copy_write">Bekleme konumu için ekran metni</string>
@@ -53,7 +55,6 @@
     <string name="language">Dil</string>
     <string name="translation">Çevir</string>
     <string name="go_to_call_point">Çağrı noktasına git</string>
-    <string name="please_enter_text">Metin gir</string>
     <string name="stay_time_setting">Bekleme süresi ayarları</string>
     <string name="stay_time">Bekleme süresi</string>
     <string name="fail_sync_map">Harita eşitlenemedi. Lütfen tekrar deneyin.</string>
@@ -66,9 +67,6 @@
     <string name="stay_point_screen_text">Bekleme konumu için ekran metni</string>
     <string name="delivery_alarm_iknow">Anladım</string>
     <string name="delivery_alarm_notice">Yanlış tepsiyi alıyorsunuz. Lütfen malzemeleri geri koyun ve ışığı yanan tepsiye ulaşın.</string>
-    <string name="box_delete_text">Silinsin mi?</string>
-    <string name="box_delete_yes">Evet</string>
-    <string name="box_delete_no">Hayır</string>
     <string name="deliver_setting_voice_switch">Çok sesli teslimat düğmesi</string>
     <string name="deliver_setting_voice_switch_sub">Teslimat Modu ana sayfasındaki ses paketlerinin hızlı ayarları için bu işlevi etkinleştirin</string>
     <string name="advanced_brake">Frenleme seviyesi</string>
@@ -90,9 +88,10 @@
     <string name="setting_repeat_pre_task">Önceki görevi tekrarlayın</string>
     <string name="tips_drag">Grup sırasını değiştirmek için uzun basın ve sürükleyin</string>
     <string name="no_longer_prompt">Bir daha hatırlatma</string>
-    <string name="custom_call_arrive_title">Çağrı üzerine varış</string>
     <string name="custom_call_loading_tip">Veri alınıyor. Lütfen bekleyin</string>
+    <string name="custom_call_arrive_title">Çağrı üzerine varış</string>
     <string name="custom_call_cancel_tip">Görev iptal edildi. Dönmeye hazır</string>
+    <string name="second">sn</string>
     <string name="box_open_xbroadcast">Yayını etkinleştir Sesli uyarı ekle</string>
     <string name="drop_check_content">Düşme riski tespit edildi, lütfen teknik destek ile iletişime geçin.\nRobotu hareket ettirmek için lütfen robotun kafasında yer alan kırmızı acil durdurma düğmesine basın.</string>
     <string name="drop_check_goto">Anomaliyi çöz</string>
@@ -128,7 +127,6 @@
     <string name="bumper_title">Çarpışma önleyici çubuk sinyalini kesme</string>
     <string name="bumper_desc">Sadece yedek parçalar değiştirilemediğinde geçici kullanım için, lütfen dikkatli kullanın</string>
     <string name="mandatory_networking">Ağ gereklidir</string>
-
     <string name="birthday_music_set_tip">Nokta matris ekran metin bağlamı</string>
     <string name="birthday_music_set_sub_tip">Düzenlendikten sonra metin içeriği (50 karaktere kadar), nokta matris ekranda yalnızca bir kez olacak şekilde görüntülenecektir</string>
     <string name="birthday_music_set_tip2">Teslim sırasında müzik çal</string>
