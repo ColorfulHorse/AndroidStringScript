@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="menu_tv_s">26sp</dimen>
+    <dimen name="deliver_arrive_id_layout_w">611dp</dimen>
+    <dimen name="settings_tab_item_tv_s">22sp</dimen>
+    <dimen name="estop_dialog_msg_tv_s">36sp</dimen>
+    <dimen name="delivery_pause_content_ll_pause_tv_s">58sp</dimen>
+    <dimen name="delivery_pause_content_ll_pause_tv_s_1">143sp</dimen>
+    <dimen name="delivery_pause_content_ll_desc_tv_s">26sp</dimen>
+    <dimen name="location_init_lost_tips_font">28sp</dimen>
+    <dimen name="recycle_dish_task_select_title">16sp</dimen>
+    <dimen name="recycle_task_go_to_washing_room">20sp</dimen>
+    <dimen name="recycle_task_go_to_dish_table">20sp</dimen>
+    <dimen name="recycle_arrive_task_title">18sp</dimen>
+    <dimen name="recycle_arrived_finish_go_btn">36sp</dimen>
+    <dimen name="recycle_arrived_go_btn">24sp</dimen>
+    <dimen name="recycle_arrived_finish_icon_padding_left">189dp</dimen>
+    <dimen name="recycle_washing_room_arrived_title">120sp</dimen>
+    <dimen name="dialog_recycle_go_btn">24sp</dimen>
+    <dimen name="dialog_recycle_padding_left">51dp</dimen>
+    <dimen name="deliver_arrive_btn_w">280dp</dimen>
+    <dimen name="lottery_result_btn_width">560dp</dimen>
+    <dimen name="dialog_error_try_btn_tv_s">22sp</dimen>
+    <dimen name="dialog_maintenance_btn_tv_s">22sp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_default_tv_s">14sp</dimen>
+    <dimen name="tip_location_lost_tv_s">22sp</dimen>
+    <dimen name="transfer_dishes_target_tv_s">86sp</dimen>
+    <dimen name="layout_fill_in_tv_s">106sp</dimen>
+    <dimen name="face_tip_lost_location_tv_s">22sp</dimen>
+
+    <dimen name="greeter_menu_go_to_gate_point">14sp</dimen>
+    <dimen name="dimens_into_greeter">28dp</dimen>
+</resources>

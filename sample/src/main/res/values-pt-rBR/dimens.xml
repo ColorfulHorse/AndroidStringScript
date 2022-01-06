@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_into_greeter">28dp</dimen>
+    <dimen name="cruise_finish_size">30sp</dimen>
+</resources>

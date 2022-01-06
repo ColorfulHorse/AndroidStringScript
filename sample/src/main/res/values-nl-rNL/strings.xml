@@ -128,4 +128,11 @@
     <string name="bumper_title">Het anti-botsingsstangsignaal afsnijden</string>
     <string name="bumper_desc">Alleen voor tijdelijk gebruik wanneer reserveonderdelen niet kunnen worden vervangen, moet u voorzichtig te werk gaan</string>
     <string name="mandatory_networking">Netwerk is vereist</string>
+
+    <string name="birthday_music_set_tip">Tekst matrixdisplay</string>
+    <string name="birthday_music_set_sub_tip">Na de wijziging wordt de tekst op het matrixdisplay weergegeven, maximaal 50 tekens, slechts één keer geldig</string>
+    <string name="birthday_music_set_tip2">Speel muziek af tijdens het bezorgen</string>
+    <string name="birthday_music_set_sub_tip2">Als deze functie is ingeschakeld, wordt er muziek afgespeeld tijdens het bezorgen</string>
+    <string name="birthday_music_set_tip3">Speel muziek af na het bezorgen</string>
+    <string name="birthday_music_set_sub_tip3">Als deze functie is ingeschakeld, wordt er muziek afgespeeld na het bezorgen</string>
 </resources>

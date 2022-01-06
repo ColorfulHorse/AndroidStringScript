@@ -128,4 +128,11 @@
     <string name="bumper_title">Odřízněte signál antikolizní lišty</string>
     <string name="bumper_desc">Pouze pro dočasné použití, pokud náhradní díly nelze vyměnit, pracujte prosím opatrně</string>
     <string name="mandatory_networking">Je vyžadována síť</string>
+
+    <string name="birthday_music_set_tip">Tečková matice textového obsahu obrazovky</string>
+    <string name="birthday_music_set_sub_tip">Po úpravě se textový obsah zobrazí na obrazovce tečkové matice, do 50 znaků, platí pouze jednorázově</string>
+    <string name="birthday_music_set_tip2">Přehrávat hudbu během doručování jídla</string>
+    <string name="birthday_music_set_sub_tip2">Po zapnutí této funkce se během doručování jídla bude přehrávat hudba</string>
+    <string name="birthday_music_set_tip3">Přehrát hudbu po doručení jídla</string>
+    <string name="birthday_music_set_sub_tip3">Po zapnutí této funkce se po doručení jídla bude přehrávat hudba</string>
 </resources>

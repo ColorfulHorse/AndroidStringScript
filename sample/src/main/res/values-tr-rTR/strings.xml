@@ -128,4 +128,11 @@
     <string name="bumper_title">Çarpışma önleyici çubuk sinyalini kesme</string>
     <string name="bumper_desc">Sadece yedek parçalar değiştirilemediğinde geçici kullanım için, lütfen dikkatli kullanın</string>
     <string name="mandatory_networking">Ağ gereklidir</string>
+
+    <string name="birthday_music_set_tip">Nokta matris ekran metin bağlamı</string>
+    <string name="birthday_music_set_sub_tip">Düzenlendikten sonra metin içeriği (50 karaktere kadar), nokta matris ekranda yalnızca bir kez olacak şekilde görüntülenecektir</string>
+    <string name="birthday_music_set_tip2">Teslim sırasında müzik çal</string>
+    <string name="birthday_music_set_sub_tip2">Bu özellik açıldığında, ürün teslimi sırasında müzik çalacaktır</string>
+    <string name="birthday_music_set_tip3">Teslim sonrasında müzik çal</string>
+    <string name="birthday_music_set_sub_tip3">Bu işlev açıldığında, ürün teslimi sonrasında müzik çalacaktır</string>
 </resources>

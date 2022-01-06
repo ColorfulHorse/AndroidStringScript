@@ -1,0 +1,775 @@
+<resources>
+
+    <!--region 自检界面 start-->
+    <dimen name="self_check_big_title_s">44sp</dimen>
+    <dimen name="self_check_big_title_m_t">103dp</dimen>
+    <dimen name="self_check_animation_w">467dp</dimen>
+    <dimen name="self_check_animation_h">267dp</dimen>
+    <dimen name="self_check_animation_m_t">60dp</dimen>
+    <!--endregion 自检界面 end-->
+
+    <!--region 自检失败 start-->
+    <dimen name="check_failed_title_ll_h">123dp</dimen>
+    <dimen name="check_failed_title_icon_s">67dp</dimen>
+    <dimen name="check_failed_title_icon_m_l">107dp</dimen>
+    <dimen name="check_failed_title_tv_m_l">20dp</dimen>
+    <dimen name="check_failed_title_tv_s">34sp</dimen>
+    <dimen name="check_failed_tv_version_m_l">30dp</dimen>
+    <dimen name="check_failed_tv_s">30sp</dimen>
+    <dimen name="check_failed_content_p">100dp</dimen>
+    <!--endregion 自检失败 end-->
+
+    <!--region 自检地图选择 start-->
+    <dimen name="check_map_select_title_m_t">50dp</dimen>
+    <dimen name="check_map_select_title_tv_s">32sp</dimen>
+    <dimen name="check_map_select_map_select_ll_w">802dp</dimen>
+    <dimen name="check_map_select_map_select_ll_h">426dp</dimen>
+    <dimen name="check_map_select_map_select_ll_m_t">16dp</dimen>
+    <dimen name="check_map_select_map_select_ll_c_r">8dp</dimen>
+    <dimen name="check_map_select_map_ll_w">476dp</dimen>
+    <dimen name="check_map_select_map_ll_h">378dp</dimen>
+    <dimen name="check_map_select_map_ll_m_l">24dp</dimen>
+    <dimen name="check_map_select_map_v_m">20dp</dimen>
+    <dimen name="check_map_select_btn_ll_m_t">32dp</dimen>
+    <dimen name="check_map_select_btn_t_s">42sp</dimen>
+    <dimen name="check_map_select_btn_h">98dp</dimen>
+    <dimen name="check_map_select_btn_1_w">280dp</dimen>
+    <dimen name="check_map_select_btn_2_w">500dp</dimen>
+    <dimen name="check_map_select_btn_2_m_l">23dp</dimen>
+    <!--endregion 自检地图选择 end-->
+
+    <!--region title bar start-->
+    <dimen name="title_bar_h">87dp</dimen>
+    <dimen name="title_bar_setting_tv_m_l">24dp</dimen>
+    <dimen name="title_bar_tv_m_l">101dp</dimen>
+    <dimen name="title_bar_tv_s">32sp</dimen>
+    <!--endregion title bar end-->
+
+    <!--region 设置相关 start-->
+    <dimen name="settings_tab_item_p">24dp</dimen>
+    <dimen name="settings_tab_item_w">363dp</dimen>
+    <dimen name="settings_tab_item_h">79dp</dimen>
+    <dimen name="settings_tab_item_m_t">12dp</dimen>
+    <dimen name="settings_tab_item_icon_p">14dp</dimen>
+    <dimen name="settings_tab_item_tv_s">22sp</dimen>
+    <dimen name="settings_fragment_title_m_l">42dp</dimen>
+    <dimen name="settings_fragment_title_tv_s">24sp</dimen>
+    <dimen name="settings_fragment_title_m_t">24sp</dimen>
+    <dimen name="settings_fragment_title_m_t_1">48dp</dimen>
+    <dimen name="settings_fragment_seek_bar_h">80dp</dimen>
+    <dimen name="settings_fragment_seek_bar_icon_s">40dp</dimen>
+    <dimen name="settings_fragment_seek_bar_tv_s">18sp</dimen>
+    <dimen name="settings_fragment_seek_bar_p">18dp</dimen>
+    <dimen name="settings_fragment_content_m">24dp</dimen>
+    <dimen name="settings_fragment_content_m_1">16dp</dimen>
+    <dimen name="settings_fragment_content_c_r">6dp</dimen>
+    <dimen name="settings_fragment_base_lg_max_h">305dp</dimen>
+    <dimen name="settings_fragment_lattice_item_h">65dp</dimen>
+    <dimen name="settings_fragment_lattice_item_tv_s">24sp</dimen>
+    <dimen name="settings_fragment_lattice_item_ll_c_r">8dp</dimen>
+    <dimen name="settings_fragment_wifi_content_m_t">197dp</dimen>
+    <dimen name="settings_fragment_wifi_btn_w">285dp</dimen>
+    <dimen name="settings_fragment_wifi_btn_h">59dp</dimen>
+    <dimen name="settings_fragment_wifi_btn_t_s">28sp</dimen>
+    <dimen name="settings_fragment_wifi_btn_m_t">58dp</dimen>
+    <dimen name="settings_fragment_map_select_ll_w">802dp</dimen>
+    <dimen name="settings_fragment_map_select_ll_h">426dp</dimen>
+    <dimen name="settings_fragment_map_select_ll_c_r">8dp</dimen>
+    <dimen name="settings_fragment_map_view_w">476dp</dimen>
+    <dimen name="settings_fragment_map_view_h">378dp</dimen>
+    <dimen name="settings_fragment_map_view_m">20dp</dimen>
+    <dimen name="settings_fragment_map_out_point_m_t">94dp</dimen>
+    <dimen name="settings_fragment_map_out_point_max_h">240dp</dimen>
+    <dimen name="settings_fragment_map_title_m_t">64dp</dimen>
+    <dimen name="settings_fragment_map_card_m_t">16dp</dimen>
+    <dimen name="settings_fragment_map_update_ll_h">100dp</dimen>
+    <dimen name="settings_fragment_map_update_ll_m_t">32dp</dimen>
+    <dimen name="settings_fragment_map_update_tv_h">36dp</dimen>
+    <dimen name="settings_fragment_map_update_p_v">10dp</dimen>
+    <dimen name="settings_fragment_map_update_size_28sp">28sp</dimen>
+    <dimen name="settings_fragment_map_update_size_20sp">20sp</dimen>
+    <dimen name="settings_fragment_voice_item_c_r">6dp</dimen>
+    <dimen name="settings_fragment_voice_item_ll_max_h">306dp</dimen>
+    <dimen name="settings_fragment_voice_line_m_t">42dp</dimen>
+    <dimen name="settings_fragment_voice_tts_select_icon_p">12dp</dimen>
+    <dimen name="settings_fragment_voice_tts_select_p">8dp</dimen>
+    <dimen name="settings_fragment_voice_tts_select_tv_s">18sp</dimen>
+    <dimen name="settings_fragment_interact_small_title_s">22sp</dimen>
+    <dimen name="settings_fragment_interact_edit_tv_w">380dp</dimen>
+    <dimen name="settings_fragment_interact_edit_tv_h">60dp</dimen>
+    <dimen name="settings_fragment_interact_edit_tv_m_t">18dp</dimen>
+    <dimen name="settings_fragment_interact_edit_tv_m_l">44dp</dimen>
+    <dimen name="settings_fragment_seek_bar_t_s">24dp</dimen>
+    <dimen name="settings_fragment_voice_add_tv_m_r">10dp</dimen>
+    <dimen name="settings_fragment_item_content_h">79dp</dimen>
+    <dimen name="settings_fragment_item_content_m_t">12dp</dimen>
+    <dimen name="settings_fragment_item_content_tv_s">22sp</dimen>
+    <dimen name="settings_fragment_switch_w">100dp</dimen>
+    <dimen name="settings_fragment_switch_p">10dp</dimen>
+    <dimen name="settings_fragment_switch_m_r">14dp</dimen>
+    <dimen name="settings_fragment_small_m_t">12dp</dimen>
+    <dimen name="settings_fragment_small_m_t_1">16dp</dimen>
+    <dimen name="settings_fragment_seek_bar_mark_s">20dp</dimen>
+    <dimen name="settings_fragment_seek_bar_tick_s">20sp</dimen>
+    <dimen name="settings_fragment_sensor_item_enable_tv">18sp</dimen>
+    <dimen name="settings_fragment_version_check_btn_h">33dp</dimen>
+    <dimen name="settings_fragment_version_check_btn_t_s">18sp</dimen>
+    <dimen name="settings_fragment_debug_title_m_t">197dp</dimen>
+    <dimen name="settings_fragment_debug_title_w">450dp</dimen>
+    <dimen name="settings_fragment_debug_btn_w">285dp</dimen>
+    <dimen name="settings_fragment_debug_btn_h">59dp</dimen>
+    <dimen name="settings_fragment_debug_btn_t_s">28sp</dimen>
+    <dimen name="settings_fragment_debug_btn_m_t">75dp</dimen>
+    <dimen name="settings_fragment_child_item_content_h">84dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_tv_w">350dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_tv_s">20sp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_et_w">180dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_et_h">50dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_et_m_t">16dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_default_tv_m_r">12dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_default_tv_max_w">120dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_default_tv_min_w">96dp</dimen>
+    <dimen name="settings_fragment_advanced_child_item_default_tv_s">14sp</dimen>
+    <dimen name="settings_fragment_advanced_item_open_tv_p">10dp</dimen>
+    <dimen name="settings_fragment_advanced_desc_tv_s">20sp</dimen>
+    <dimen name="settings_fragment_advanced_qr_code_s">180dp</dimen>
+    <dimen name="settings_fragment_advanced_qr_code_m_t">40dp</dimen>
+    <dimen name="settings_fragment_advanced_btn_h">59dp</dimen>
+    <dimen name="settings_fragment_advanced_btn_min_w">200dp</dimen>
+    <dimen name="settings_fragment_advanced_btn_p">10dp</dimen>
+    <dimen name="settings_fragment_advanced_btn_t_s">24sp</dimen>
+    <dimen name="settings_fragment_advanced_qr_code_content_m_t">5dp</dimen>
+
+    <dimen name="settings_fragment_about_info_ercode_m_t">72dp</dimen>
+    <dimen name="settings_fragment_about_info_ercode_s">160dp</dimen>
+    <dimen name="settings_fragment_about_info_ercode_tv_s">22sp</dimen>
+    <dimen name="settings_fragment_about_info_interval_164">164dp</dimen>
+
+
+    <dimen name="settings_fragment_tray_edit_btn_m_l">40dp</dimen>
+    <dimen name="settings_fragment_tray_edit_btn_w">120dp</dimen>
+    <dimen name="settings_fragment_tray_edit_btn_h">40dp</dimen>
+    <dimen name="settings_fragment_tray_edit_btn_t_s">24sp</dimen>
+    <dimen name="settings_fragment_tray_edit_item_w">107dp</dimen>
+    <dimen name="settings_fragment_tray_edit_item_h">33dp</dimen>
+    <dimen name="settings_fragment_tray_layout_h">442dp</dimen>
+    <dimen name="settings_fragment_tray_robot_layout_w">178dp</dimen>
+    <dimen name="settings_fragment_tray_robot_layout_h">397dp</dimen>
+    <dimen name="settings_fragment_tray_item_layout_w">300dp</dimen>
+    <dimen name="settings_fragment_tray_item_layout_h">260dp</dimen>
+    <dimen name="settings_fragment_tray_item_layout_p_b">40dp</dimen>
+
+
+    <dimen name="advance_interval_1000dp">1000dp</dimen>
+    <dimen name="advance_interval_640dp">640dp</dimen>
+    <dimen name="advance_interval_380dp">380dp</dimen>
+    <dimen name="advance_interval_280dp">280dp</dimen>
+    <dimen name="advance_interval_240dp">240dp</dimen>
+    <dimen name="advance_interval_100dp">100dp</dimen>
+    <dimen name="advance_interval_80dp">80dp</dimen>
+    <dimen name="advance_interval_56dp">56dp</dimen>
+    <dimen name="advance_interval_32dp">32dp</dimen>
+    <dimen name="advance_interval_30dp">30dp</dimen>
+    <dimen name="advance_interval_20dp">20dp</dimen>
+    <dimen name="advance_interval_12dp">12dp</dimen>
+
+    <dimen name="advance_tv_size_60sp">60sp</dimen>
+    <dimen name="advance_tv_size_48sp">48sp</dimen>
+    <dimen name="advance_tv_size_36sp">36sp</dimen>
+    <dimen name="advance_tv_size_32sp">32sp</dimen>
+
+    <dimen name="settings_fragment_function_interval_80dp">80dp</dimen>
+    <dimen name="settings_fragment_function_interval_32dp">32dp</dimen>
+    <dimen name="settings_fragment_function_interval_24dp">24dp</dimen>
+
+    <dimen name="settings_fragment_function_tv_size_28sp">28sp</dimen>
+    <dimen name="settings_fragment_function_tv_size_24sp">24sp</dimen>
+
+    <dimen name="setting_interval_160dp">160dp</dimen>
+    <dimen name="setting_interval_80dp">80dp</dimen>
+    <dimen name="setting_interval_20dp">20dp</dimen>
+    <dimen name="setting_interval_12dp">12dp</dimen>
+    <dimen name="setting_tv_size_28sp">28sp</dimen>
+    <dimen name="setting_tv_size_24sp">24sp</dimen>
+    <dimen name="setting_tv_size_20sp">20sp</dimen>
+    <!--endregion 设置相关 end-->
+
+
+    <!--region 编辑任务界面 start -->
+
+    <dimen name="delivery_task_mode_tv_h">52dp</dimen>
+    <dimen name="delivery_task_mode_tv_s">24sp</dimen>
+    <dimen name="delivery_task_mode_tv_p">8dp</dimen>
+    <dimen name="delivery_task_mode_tv_m_l">225dp</dimen>
+    <dimen name="delivery_task_mode_tv_m_t">10dp</dimen>
+
+    <dimen name="delivery_task_tables_ll_m_l">20dp</dimen>
+    <dimen name="delivery_task_tables_ll_m_r">60dp</dimen>
+    <dimen name="delivery_task_tables_ll_c_r">28dp</dimen>
+    <dimen name="delivery_task_tables_ll_c_e">16dp</dimen>
+    <dimen name="delivery_task_tables_ll_w">729dp</dimen>
+    <dimen name="delivery_task_tables_ll_h">467dp</dimen>
+    <dimen name="delivery_task_classify_icon_s">103dp</dimen>
+    <dimen name="delivery_task_classify_icon_p">30dp</dimen>
+    <dimen name="delivery_task_classify_ll_w">729dp</dimen>
+    <dimen name="delivery_task_classify_ll_h">113dp</dimen>
+    <dimen name="delivery_task_classify_drag_ll_w">700dp</dimen>
+    <dimen name="delivery_task_classify_drag_ll_h">80dp</dimen>
+
+    <dimen name="delivery_task_fragment_w">700dp</dimen>
+    <dimen name="delivery_task_fragment_w_1">675dp</dimen>
+
+    <dimen name="delivery_task_start_btn_w">700dp</dimen>
+    <dimen name="delivery_task_start_btn_w_1">675dp</dimen>
+    <dimen name="delivery_task_start_btn_h">99dp</dimen>
+    <dimen name="delivery_task_start_btn_t_s">56sp</dimen>
+    <dimen name="delivery_task_start_btn_m_l">20dp</dimen>
+    <dimen name="delivery_task_start_btn_m_r">20dp</dimen>
+    <dimen name="delivery_task_start_btn_m_t">27dp</dimen>
+    <dimen name="delivery_task_start_btn_m_b">52dp</dimen>
+    <dimen name="delivery_task_start_btn_c_r">16dp</dimen>
+    <dimen name="delivery_task_start_btn_c_e">22dp</dimen>
+
+    <dimen name="delivery_task_table_item_w">200dp</dimen>
+    <dimen name="delivery_task_table_item_h">68dp</dimen>
+    <dimen name="delivery_task_table_item_p">6dp</dimen>
+    <dimen name="delivery_task_table_item_tv_s">28sp</dimen>
+    <dimen name="delivery_task_table_item_tv_l">36sp</dimen>
+    <dimen name="delivery_task_table_item_m">8.5dp</dimen>
+    <dimen name="delivery_task_table_item_c_r">8dp</dimen>
+
+    <!-- robot -->
+    <dimen name="delivery_robot_ll_w">450dp</dimen>
+    <dimen name="delivery_robot_ll_h">22dp</dimen>
+    <dimen name="delivery_robot_ll_m_l">0dp</dimen>
+    <dimen name="delivery_robot_ll_m_r">0dp</dimen>
+    <dimen name="delivery_robot_img_w">450dp</dimen>
+    <dimen name="delivery_robot_img_h">800dp</dimen>
+    <dimen name="delivery_robot_tray_ll_w">450dp</dimen>
+    <dimen name="delivery_robot_tray_ll_h">500dp</dimen>
+    <dimen name="delivery_robot_tray_item_ll_h">83dp</dimen>
+    <dimen name="delivery_robot_tray_ll_m_t">150dp</dimen>
+    <dimen name="delivery_robot_tray_ll_m_b">55dp</dimen>
+    <dimen name="delivery_robot_tray_tv_w">190dp</dimen>
+    <dimen name="delivery_robot_tray_tv_h">59dp</dimen>
+    <dimen name="delivery_robot_tray_tv_s">41sp</dimen>
+    <dimen name="delivery_robot_tray_count_tv_w">36dp</dimen>
+    <dimen name="delivery_robot_tray_count_tv_s">18sp</dimen>
+    <dimen name="delivery_robot_tray_close_iv_p_l">30sp</dimen>
+    <dimen name="delivery_robot_tray_close_iv_p_r">10sp</dimen>
+    <dimen name="delivery_robot_tray_close_iv_p_t">10sp</dimen>
+    <dimen name="delivery_robot_tray_close_iv_p_b">10sp</dimen>
+    <dimen name="delivery_robot_tray_close_iv_m_l">-25dp</dimen>
+    <dimen name="delivery_robot_tray_multi_edit_iv_s">20dp</dimen>
+    <dimen name="delivery_robot_tray_tv_m_l">53dp</dimen>
+    <dimen name="delivery_robot_tray_tv_c_r">8dp</dimen>
+    <dimen name="delivery_robot_tray_crown_w">46dp</dimen>
+    <dimen name="delivery_robot_tray_crown_h">42dp</dimen>
+    <dimen name="delivery_robot_tray_crown_m_l">295dp</dimen>
+    <dimen name="delivery_robot_tray_crown_m_b">51dp</dimen>
+
+
+    <dimen name="dialog_robot_dish_info_edit_ll_w">1080dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_ll_h">542dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_ll_m_t">64dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_ll_c_r">24dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_rv_p">20dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_btn_m_t">42dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_btn_h">99dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_small_btn_w">300dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_big_btn_w">748dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_btn_m">32dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_big_m">32dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_big_t_s">60sp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_tv_p_l">14dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_tv_p_r">14dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_tv_p_t">24dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_tv_p_b">24dp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_tv_s">42sp</dimen>
+    <dimen name="dialog_robot_dish_info_edit_item_w">320dp</dimen>
+
+    <dimen name="dialog_robot_tray_multi_table_edit_ll_w">1080dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_ll_h">542dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_ll_m_t">64dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_ll_c_r">24dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_btn_m_t">42dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_btn_h">99dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_btn_t_s">42sp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_ic_close_s">60dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_ic_close_p">10dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_w">260dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_h">120dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_h">100dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_w">240dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_content_max_w">200dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_c_r">16dp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_s">44sp</dimen>
+    <dimen name="dialog_robot_tray_multi_table_edit_item_tv_p">10dp</dimen>
+
+    <dimen name="drag_tips_tv_max_size">48sp</dimen>
+    <dimen name="drag_tips_tv_min_size">28sp</dimen>
+
+
+    <!--endregion 编辑任务界面 end -->
+
+
+    <!--region 特殊模式 start -->
+
+    <dimen name="special_mode_ll_m_l">100dp</dimen>
+    <dimen name="special_mode_ll_m_t">82dp</dimen>
+    <dimen name="special_mode_title_m_l">31dp</dimen>
+    <dimen name="special_mode_title_tv_s">24sp</dimen>
+    <dimen name="special_mode_list_ll_w">520dp</dimen>
+    <dimen name="special_mode_list_ll_h">372dp</dimen>
+    <dimen name="special_mode_list_ll_m_t">16dp</dimen>
+    <dimen name="special_mode_list_ll_c_r">12dp</dimen>
+    <dimen name="special_mode_list_ll_pb_s">42dp</dimen>
+    <dimen name="special_mode_list_ll_empty_tv_s">32sp</dimen>
+    <dimen name="special_mode_list_ll_empty_m_t">96dp</dimen>
+    <dimen name="special_mode_list_ll_empty_add_btn_w">286dp</dimen>
+    <dimen name="special_mode_list_ll_empty_add_btn_h">59dp</dimen>
+    <dimen name="special_mode_list_ll_empty_add_btn_t_s">28sp</dimen>
+    <dimen name="special_mode_list_ll_p">40dp</dimen>
+    <dimen name="special_mode_btn_w">1080dp</dimen>
+    <dimen name="special_mode_btn_h">99dp</dimen>
+    <dimen name="special_mode_btn_m_t">40dp</dimen>
+    <dimen name="special_mode_btn_t_s">60sp</dimen>
+
+    <!--endregion 特殊模式 end -->
+
+
+    <!--region 配送界面 start -->
+
+    <dimen name="delivery_pause_ll_h">539dp</dimen>
+    <dimen name="delivery_pause_ll_w">907dp</dimen>
+    <dimen name="delivery_pause_ll_c_r">16dp</dimen>
+    <dimen name="delivery_pause_ll_m_t">60dp</dimen>
+    <dimen name="delivery_pause_robot_w">222dp</dimen>
+    <dimen name="delivery_pause_robot_h">488dp</dimen>
+    <dimen name="delivery_pause_robot_m_l">120dp</dimen>
+    <dimen name="delivery_pause_robot_m_l_1">60dp</dimen>
+    <dimen name="delivery_pause_robot_m_t">25dp</dimen>
+    <dimen name="delivery_pause_robot_tray_ll_w">204dp</dimen>
+    <dimen name="delivery_pause_robot_tray_ll_h">340dp</dimen>
+    <dimen name="delivery_pause_robot_tray_ll_m_l">32dp</dimen>
+    <dimen name="delivery_pause_robot_tray_ll_m_b">55dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_ll_w">142dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_ll_h">60dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_tv_w">122dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_tv_h">38dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_red_point_s">28dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_red_point_t_s">16sp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_tv_s">22sp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_tv_c_r">7dp</dimen>
+    <dimen name="delivery_pause_robot_tray_item_tv_p">5dp</dimen>
+    <dimen name="delivery_pause_content_ll_m_l">21dp</dimen>
+    <dimen name="delivery_pause_content_ll_w">454dp</dimen>
+    <dimen name="delivery_pause_content_ll_w_1">688dp</dimen>
+    <dimen name="delivery_pause_content_ll_target_c_r">16dp</dimen>
+    <dimen name="delivery_pause_content_ll_target_tv_h">88dp</dimen>
+    <dimen name="delivery_pause_content_ll_target_tv_max_w">454dp</dimen>
+    <dimen name="delivery_pause_content_ll_target_tv_min_w">300dp</dimen>
+    <dimen name="delivery_pause_content_ll_target_tv_s">38sp</dimen>
+    <dimen name="delivery_pause_content_ll_pause_tv_m_t">16dp</dimen>
+    <dimen name="delivery_pause_content_ll_pause_tv_s">64sp</dimen>
+    <dimen name="delivery_pause_content_ll_pause_tv_s_1">160sp</dimen>
+    <dimen name="delivery_pause_content_ll_desc_tv_s">20sp</dimen>
+    <dimen name="delivery_pause_content_ll_time_tv_m_t">50dp</dimen>
+    <dimen name="delivery_pause_content_ll_time_tv_s">22sp</dimen>
+
+    <dimen name="delivery_pause_fun_btn_m_t">29dp</dimen>
+    <dimen name="delivery_pause_fun_btn_h">141dp</dimen>
+    <dimen name="delivery_pause_fun_btn_min_w">111dp</dimen>
+    <dimen name="delivery_pause_fun_btn_icon_s">67dp</dimen>
+    <dimen name="delivery_pause_fun_btn_icon_m_t">8dp</dimen>
+    <dimen name="delivery_pause_fun_btn_tv_s">22sp</dimen>
+    <dimen name="delivery_pause_fun_btn_tv_m_t">24dp</dimen>
+    <dimen name="delivery_pause_fun_btn_tv_m_l">107dp</dimen>
+
+    <dimen name="delivery_arrive_robot_ll_w">405dp</dimen>
+    <dimen name="delivery_arrive_robot_ll_h">712dp</dimen>
+    <dimen name="delivery_arrive_robot_w">325dp</dimen>
+    <dimen name="delivery_arrive_robot_h">712dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_ll_w">240dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_ll_h">400dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_ll_p_l">23dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_ll_m_b">40dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_tv_w">189dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_ll_w">209dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_tv_h">59dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_h">80dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_c_r">8dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_tv_p">8dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_tv_s">32sp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_tv_m_b">10dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_item_red_point_s">36dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_crown_w">46dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_crown_h">42dp</dimen>
+    <dimen name="delivery_arrive_robot_tray_crown_m_b">52dp</dimen>
+    <dimen name="delivery_arrive_content_ll_w">611dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_h">91dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_m_l">22dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_m_t">58dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_m_r">40dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_c_r">16dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_icon_p">30dp</dimen>
+    <dimen name="delivery_arrive_content_title_ll_tv_s">32sp</dimen>
+    <dimen name="delivery_arrive_content_target_ll_h">320dp</dimen>
+    <dimen name="delivery_arrive_content_target_small_ll_w">220dp</dimen>
+    <dimen name="delivery_arrive_content_target_ll_m_t">42dp</dimen>
+    <dimen name="delivery_arrive_content_target_ll_c_r">16dp</dimen>
+    <dimen name="delivery_arrive_content_dish_info_ll_w">370dp</dimen>
+    <dimen name="delivery_arrive_content_target_tv_s">146sp</dimen>
+    <dimen name="delivery_arrive_greed_point_s">13dp</dimen>
+    <dimen name="delivery_arrive_greed_point_m">28dp</dimen>
+    <dimen name="delivery_arrive_btn_h">99dp</dimen>
+    <dimen name="delivery_arrive_btn_m_t">50dp</dimen>
+    <dimen name="delivery_arrive_btn_t_s">62sp</dimen>
+    <dimen name="delivery_arrive_recycle_switch_m_t">28sp</dimen>
+
+    <dimen name="delivery_on_the_way_target_t_w">1100dp</dimen>
+
+
+    <!--endregion 配送界面 end -->
+
+    <!--region 返航界面 start -->
+    <dimen name="turn_back_ll_w">917dp</dimen>
+    <dimen name="turn_back_ll_h">401dp</dimen>
+    <dimen name="turn_back_ll_m_t">153dp</dimen>
+    <dimen name="turn_back_ll_red_point_s">13dp</dimen>
+    <dimen name="turn_back_ll_red_point_m_l">33dp</dimen>
+    <dimen name="turn_back_ll_red_point_m_t">29dp</dimen>
+
+    <dimen name="turn_back_ll_title_tv_m_t">30dp</dimen>
+    <dimen name="turn_back_ll_title_tv_s">123sp</dimen>
+    <dimen name="turn_back_ll_desc_tv_s">25sp</dimen>
+    <dimen name="turn_back_ll_desc_tv_m_t">15dp</dimen>
+    <dimen name="turn_back_ll_time_tv_m_t">30dp</dimen>
+    <dimen name="turn_back_ll_time_tv_s">22sp</dimen>
+    <dimen name="turn_back_fun_btn_ll_min_w">111dp</dimen>
+    <dimen name="turn_back_fun_btn_ll_h">141dp</dimen>
+    <dimen name="turn_back_fun_btn_icon_s">67dp</dimen>
+    <dimen name="turn_back_fun_btn_icon_m_t">8dp</dimen>
+    <dimen name="turn_back_fun_btn_tv_m_t">24dp</dimen>
+    <dimen name="turn_back_fun_btn_tv_s">22sp</dimen>
+
+    <!--endregion 返航界面 end -->
+
+    <!--region 抽奖结果 start -->
+    <dimen name="lottery_result_target_tv_m_t">75dp</dimen>
+    <dimen name="lottery_result_target_tv_s">48sp</dimen>
+    <dimen name="lottery_result_prize_tv_s">72sp</dimen>
+    <dimen name="lottery_result_prize_tv_m_t">28dp</dimen>
+    <dimen name="lottery_result_prize_tv_p">28dp</dimen>
+    <dimen name="lottery_result_btn_w">1096dp</dimen>
+    <dimen name="lottery_result_btn_h">99dp</dimen>
+    <dimen name="lottery_result_btn_m_b">112dp</dimen>
+    <dimen name="lottery_result_btn_t_s">66sp</dimen>
+    <!--endregion 抽奖结果 end -->
+
+
+    <!--region 相关的dialog start -->
+
+
+    <dimen name="dialog_maintenance_w">1060dp</dimen>
+    <dimen name="dialog_maintenance_h">640dp</dimen>
+    <dimen name="dialog_maintenance_content_w">880dp</dimen>
+    <dimen name="dialog_maintenance_content_h">392dp</dimen>
+    <dimen name="dialog_maintenance_content_m_t">34dp</dimen>
+    <dimen name="dialog_maintenance_content_p">10dp</dimen>
+    <dimen name="dialog_maintenance_content_tv_s">32dp</dimen>
+    <dimen name="dialog_maintenance_btn_m_t">32dp</dimen>
+    <dimen name="dialog_maintenance_btn_m_l">80dp</dimen>
+    <dimen name="dialog_maintenance_btn_tv_s">18sp</dimen>
+    <dimen name="dialog_maintenance_btn_tv_p">8dp</dimen>
+
+
+    <dimen name="dialog_rgbd_oil_w">1060dp</dimen>
+    <dimen name="dialog_rgbd_oil_h">640dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_m_l">43dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_m_r">43dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_m_b">31dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_m_t">20dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_max_h">300dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_p">90dp</dimen>
+    <dimen name="dialog_rgbd_oil_content_tv_s">42sp</dimen>
+    <dimen name="dialog_rgbd_oil_content_img_w">426sp</dimen>
+    <dimen name="dialog_rgbd_oil_content_img_h">226sp</dimen>
+
+
+    <dimen name="dialog_error_alter_title_tv_s">73sp</dimen>
+    <dimen name="dialog_error_alter_title_icon_p">27dp</dimen>
+    <dimen name="dialog_error_alter_content_tv_h">240dp</dimen>
+    <dimen name="dialog_error_alter_content_tv_w">940dp</dimen>
+    <dimen name="dialog_error_alter_content_tv_m_t">50dp</dimen>
+    <dimen name="dialog_error_alter_content_tv_s">42sp</dimen>
+    <dimen name="dialog_error_alter_btn_m_t">100dp</dimen>
+
+
+    <dimen name="dialog_error_fix_animation_m_t">72dp</dimen>
+    <dimen name="dialog_error_fix_animation_big_img_m_t">65dp</dimen>
+    <dimen name="dialog_error_fix_animation_big_img_s">320dp</dimen>
+    <dimen name="dialog_error_fix_animation_small_img_s">192dp</dimen>
+    <dimen name="dialog_error_fix_animation_small_img_m_l">300dp</dimen>
+    <dimen name="dialog_error_fix_desc_m_t">64dp</dimen>
+    <dimen name="dialog_error_fix_desc_t_s">70sp</dimen>
+    <dimen name="dialog_error_fix_btn_w">880dp</dimen>
+    <dimen name="dialog_error_fix_btn_h">80dp</dimen>
+    <dimen name="dialog_error_fix_btn_t_s">40sp</dimen>
+
+    <dimen name="dialog_error_try_content_w">580dp</dimen>
+    <dimen name="dialog_error_try_content_h">306dp</dimen>
+    <dimen name="dialog_error_try_content_t_s">36sp</dimen>
+    <dimen name="dialog_error_try_content_p">10dp</dimen>
+    <dimen name="dialog_error_try_btn_m_l">20dp</dimen>
+    <dimen name="dialog_error_try_btn_tv_s">18sp</dimen>
+    <dimen name="dialog_error_try_btn_m">30dp</dimen>
+
+
+    <dimen name="dialog_title_h">80dp</dimen>
+    <dimen name="dialog_title_tv_s">24sp</dimen>
+    <dimen name="dialog_btn_h">59dp</dimen>
+    <dimen name="dialog_btn_w">285dp</dimen>
+    <dimen name="dialog_btn_w_tip">260dp</dimen>
+    <dimen name="dialog_btn_t_s">28sp</dimen>
+    <dimen name="dialog_normal_content_m_l">43dp</dimen>
+    <dimen name="dialog_normal_w">667dp</dimen>
+    <dimen name="dialog_normal_content_m_r">43dp</dimen>
+    <dimen name="dialog_normal_content_m_t">35dp</dimen>
+    <dimen name="dialog_normal_content_m_b">31dp</dimen>
+    <dimen name="dialog_normal_content_p">5dp</dimen>
+    <dimen name="dialog_normal_content_max_h">307dp</dimen>
+    <dimen name="dialog_normal_content_min_h">250dp</dimen>
+    <dimen name="dialog_normal_content_tv_s">36sp</dimen>
+
+    <dimen name="dialog_interval_1000dp">1000dp</dimen>
+    <dimen name="dialog_interval_640dp">640dp</dimen>
+    <dimen name="dialog_interval_380dp">380dp</dimen>
+    <dimen name="dialog_interval_100dp">100dp</dimen>
+    <dimen name="dialog_interval_80dp">80dp</dimen>
+    <dimen name="dialog_interval_64dp">64dp</dimen>
+    <dimen name="dialog_interval_56dp">56dp</dimen>
+
+    <dimen name="dialog_tv_size_48sp">48sp</dimen>
+    <dimen name="dialog_tv_size_36sp">36sp</dimen>
+    <dimen name="dialog_tv_size_32sp">32sp</dimen>
+    <!--endregion 相关的dialog end -->
+
+
+    <!--region 巡航任务 start -->
+    <dimen name="cruise_task_pause_ll_w">917dp</dimen>
+    <dimen name="cruise_task_pause_ll_h">421dp</dimen>
+    <dimen name="cruise_task_pause_ll_m_t">153dp</dimen>
+    <dimen name="cruise_task_pause_ll_tv_m_t">40dp</dimen>
+    <dimen name="cruise_task_pause_ll_tv_s">123sp</dimen>
+    <dimen name="cruise_task_pause_ll_desc_tv_s">41sp</dimen>
+    <dimen name="cruise_task_pause_ll_desc_tv_m_t">15dp</dimen>
+    <dimen name="cruise_task_pause_ll_time_tv_m_t">40dp</dimen>
+    <dimen name="cruise_task_pause_ll_time_tv_s">21sp</dimen>
+    <dimen name="cruise_task_pause_point_m_t">29dp</dimen>
+    <dimen name="cruise_task_pause_point_m_l">33dp</dimen>
+    <dimen name="cruise_task_pause_btn_m_b">33dp</dimen>
+
+    <!--endregion 巡航任务 end -->
+
+    <!--region GENERAL start -->
+    <dimen name="color_point_s">13dp</dimen>
+
+    <dimen name="pause_func_btn_min_w">111dp</dimen>
+    <dimen name="pause_func_btn_h">141dp</dimen>
+    <dimen name="pause_func_btn_icon_s">67dp</dimen>
+    <dimen name="pause_func_btn_icon_m_t">8dp</dimen>
+    <dimen name="pause_func_btn_tv_m_t">24dp</dimen>
+    <dimen name="pause_func_btn_tv_s">21sp</dimen>
+
+
+    <!--endregion GENERAL end -->
+
+
+    <dimen name="menu_tv_s">20sp</dimen>
+
+
+    <!-- GENERAL -->
+
+    <!--290-->
+
+
+    <dimen name="deliver_arrive_id_layout_w">611dp</dimen>
+    <dimen name="estop_dialog_msg_tv_s">25sp</dimen>
+
+
+    <dimen name="setting_item_w">240dp</dimen>
+    <dimen name="setting_item_h">64dp</dimen>
+    <dimen name="setting_item_iv_size">45dp</dimen>
+    <dimen name="setting_item_iv_padding">15dp</dimen>
+    <dimen name="setting_fragment_title_size">24sp</dimen>
+    <dimen name="text_setting_item">18sp</dimen>
+    <dimen name="text_deliver_pause_title">64sp</dimen>
+    <dimen name="text_deliver_pause_desc">20sp</dimen>
+    <dimen name="location_init_lost_tips_font">22sp</dimen>
+
+
+    <dimen name="recycle_dish_task_select_title">16sp</dimen>
+    <dimen name="recycle_task_go_to_washing_room">20sp</dimen>
+    <dimen name="recycle_task_go_to_dish_table">20sp</dimen>
+    <dimen name="recycle_arrive_task_title">16sp</dimen>
+    <dimen name="recycle_arrived_finish_go_btn">28sp</dimen>
+    <dimen name="recycle_arrived_go_btn">22sp</dimen>
+    <dimen name="recycle_arrived_finish_icon_padding_left">189dp</dimen>
+    <dimen name="recycle_washing_room_arrived_title">50sp</dimen>
+    <dimen name="recycle_arrive_btn">24sp</dimen>
+    <dimen name="dialog_recycle_go_btn">24sp</dimen>
+    <dimen name="dialog_recycle_padding_left">30dp</dimen>
+
+
+    <dimen name="min_adapt_text_size">18sp</dimen>
+    <dimen name="deliver_arrive_small_info_id_w">160dp</dimen>
+
+    <dimen name="deliver_arrive_btn_w">240dp</dimen>
+    <dimen name="lottery_result_btn_width">560dp</dimen>
+    <dimen name="tip_location_lost_tv_s">32sp</dimen>
+    <dimen name="transfer_dishes_target_tv_s">86sp</dimen>
+    <dimen name="layout_fill_in_tv_s">106sp</dimen>
+    <dimen name="face_tip_lost_location_tv_s">24sp</dimen>
+
+
+    <dimen name="active_title_tv_s">56sp</dimen>
+    <dimen name="smart_input_item_w">200dp</dimen>
+    <dimen name="smart_input_item_h">93dp</dimen>
+    <dimen name="smart_input_item_tv_s">36sp</dimen>
+    <dimen name="smart_input_item_interval_out">24sp</dimen>
+    <dimen name="smart_input_item_interval_in_v">16sp</dimen>
+    <dimen name="smart_input_item_interval_in_h">26sp</dimen>
+
+    <dimen name="smart_input_item_interval">25dp</dimen>
+    <dimen name="smart_input_item_interval_h">15dp</dimen>
+    <dimen name="smart_item_elevation">2dp</dimen>
+    <dimen name="smart_input_tv_max_w">242dp</dimen>
+    <dimen name="smart_input_tv_s">42sp</dimen>
+    <dimen name="item_smart_input_result_tv_s">30sp</dimen>
+    <dimen name="item_smart_input_result_w">176dp</dimen>
+    <dimen name="item_smart_input_letter_w">200dp</dimen>
+    <dimen name="item_smart_input_letter_tv_s">36sp</dimen>
+    <dimen name="setting_icon_p">11dp</dimen>
+    <dimen name="setting_tab_item_m">20dp</dimen>
+    <dimen name="setting_icon_m">24dp</dimen>
+    <dimen name="setting_item_m">24dp</dimen>
+    <dimen name="self_check_desc_m_t">48dp</dimen>
+    <dimen name="self_check_desc_t_s">28sp</dimen>
+    <dimen name="greeter_menu_info_w">333dp</dimen>
+    <dimen name="greeter_menu_item_w">300dp</dimen>
+    <dimen name="greeter_menu_item_h">80dp</dimen>
+    <dimen name="greeter_menu_item_text_w">222dp</dimen>
+    <dimen name="greeter_menu_item_text_h">36dp</dimen>
+    <dimen name="greeter_menu_item_delete">48dp</dimen>
+    <dimen name="greeter_menu_item_delete_p">8dp</dimen>
+    <dimen name="greeter_menu_item_delete_m">-8dp</dimen>
+    <dimen name="greeter_menu_item_top_bottom">16dp</dimen>
+    <dimen name="greeter_menu_item_let_right">17dp</dimen>
+    <dimen name="greeter_menu_select_title_h">80dp</dimen>
+    <dimen name="greeter_menu_table_info_p">33dp</dimen>
+    <dimen name="greeter_info_table_tv_s">120dp</dimen>
+    <dimen name="greeter_puase_title">67dp</dimen>
+
+    <!--region  check location  -->
+    <dimen name="checking_location_tip_width">1000dp</dimen>
+    <dimen name="checking_location_tip_height">115dp</dimen>
+    <dimen name="checking_location_tip_margin_top">64dp</dimen>
+    <dimen name="checking_location_tip_text_size">44sp</dimen>
+    <!--endregion-->
+    <dimen name="greeter_menu_go_to_gate_point">14sp</dimen>
+    <dimen name="dialog_latice_close">24sp</dimen>
+    <dimen name="goto_welcone_area_pause_desc">32sp</dimen>
+    <dimen name="dimens_into_greeter">28dp</dimen>
+
+    <dimen name="layout_pallet_item_margin2">53dp</dimen>
+    <dimen name="layout_pallet_item_margin1">15dp</dimen>
+
+    <dimen name="deliver_task_tv_size_36sp">36sp</dimen>
+    <dimen name="deliver_task_tv_size_32sp">32sp</dimen>
+    <dimen name="deliver_task_tv_size_28sp">28sp</dimen>
+    <dimen name="deliver_task_tv_size_24sp">24sp</dimen>
+    <dimen name="deliver_task_tv_size_20sp">20sp</dimen>
+    <dimen name="deliver_task_interval_1000dp">1000dp</dimen>
+    <dimen name="deliver_task_interval_640dp">640dp</dimen>
+    <dimen name="deliver_task_interval_380dp">380dp</dimen>
+    <dimen name="deliver_task_interval_180dp">180dp</dimen>
+    <dimen name="deliver_task_interval_144dp">144dp</dimen>
+    <dimen name="deliver_task_interval_116dp">116dp</dimen>
+    <dimen name="deliver_task_interval_100dp">100dp</dimen>
+    <dimen name="deliver_task_interval_88dp">88dp</dimen>
+    <dimen name="deliver_task_interval_80dp">80dp</dimen>
+    <dimen name="deliver_task_interval_70dp">70dp</dimen>
+    <dimen name="deliver_task_interval_65dp">65dp</dimen>
+    <dimen name="deliver_task_interval_52dp">52dp</dimen>
+    <dimen name="deliver_task_interval_45dp">45dp</dimen>
+    <dimen name="deliver_task_interval_40dp">40dp</dimen>
+    <dimen name="deliver_task_interval_32dp">32dp</dimen>
+    <dimen name="deliver_task_interval_24dp">24dp</dimen>
+    <dimen name="deliver_task_interval_16dp">16dp</dimen>
+    <dimen name="deliver_task_interval_10dp">10dp</dimen>
+    <dimen name="deliver_task_interval_8dp">8dp</dimen>
+    <dimen name="deliver_task_interval_5dp">5dp</dimen>
+    <dimen name="deliver_task_interval_1dp">1dp</dimen>
+
+    <dimen name="deliver_setting_interval_325dp">325dp</dimen>
+    <dimen name="deliver_setting_interval_240dp">240dp</dimen>
+    <dimen name="deliver_setting_interval_80dp">80dp</dimen>
+    <dimen name="deliver_setting_interval_48dp">48dp</dimen>
+    <dimen name="deliver_setting_interval_46dp">46dp</dimen>
+    <dimen name="deliver_setting_interval_36dp">36dp</dimen>
+    <dimen name="deliver_setting_interval_24dp">24dp</dimen>
+    <dimen name="deliver_setting_interval_17dp">17dp</dimen>
+    <dimen name="deliver_setting_interval_16dp">16dp</dimen>
+    <dimen name="deliver_setting_interval_12dp">12dp</dimen>
+    <dimen name="deliver_setting_tv_size_28sp">28sp</dimen>
+    <dimen name="deliver_setting_tv_size_24sp">24sp</dimen>
+
+    <dimen name="dialog_interval_24dp">24dp</dimen>
+    <dimen name="dialog_interval_8dp">8dp</dimen>
+    <dimen name="dialog_tv_size_24sp">24sp</dimen>
+
+    <dimen name="pay_item_440dp">440dp</dimen>
+    <dimen name="pay_item_648dp">648dp</dimen>
+    <dimen name="pay_item_360dp">360dp</dimen>
+
+<!--region 自定义呼叫界面-->
+    <dimen name="custom_call_interval_1120dp">1120dp</dimen>
+    <dimen name="custom_call_interval_816dp">816dp</dimen>
+    <dimen name="custom_call_interval_704dp">704dp</dimen>
+    <dimen name="custom_call_interval_688dp">688dp</dimen>
+    <dimen name="custom_call_interval_648dp">648dp</dimen>
+    <dimen name="custom_call_interval_640dp">640dp</dimen>
+    <dimen name="custom_call_interval_440dp">440dp</dimen>
+    <dimen name="custom_call_interval_400dp">400dp</dimen>
+    <dimen name="custom_call_interval_368dp">368dp</dimen>
+    <dimen name="custom_call_interval_360dp">360dp</dimen>
+    <dimen name="custom_call_interval_240dp">240dp</dimen>
+    <dimen name="custom_call_interval_140dp">140dp</dimen>
+    <dimen name="custom_call_interval_120dp">120dp</dimen>
+    <dimen name="custom_call_interval_104dp">104dp</dimen>
+    <dimen name="custom_call_interval_100dp">100dp</dimen>
+    <dimen name="custom_call_interval_96dp">96dp</dimen>
+    <dimen name="custom_call_interval_82dp">82dp</dimen>
+    <dimen name="custom_call_interval_80dp">80dp</dimen>
+    <dimen name="custom_call_interval_64dp">64dp</dimen>
+    <dimen name="custom_call_interval_56dp">56dp</dimen>
+    <dimen name="custom_call_interval_48dp">48dp</dimen>
+    <dimen name="custom_call_interval_42dp">42dp</dimen>
+    <dimen name="custom_call_interval_40dp">40dp</dimen>
+    <dimen name="custom_call_interval_36dp">36dp</dimen>
+    <dimen name="custom_call_interval_32dp">32dp</dimen>
+    <dimen name="custom_call_interval_24dp">24dp</dimen>
+    <dimen name="custom_call_interval_16dp">16dp</dimen>
+
+    <dimen name="custom_call_tv_size_160sp">160sp</dimen>
+    <dimen name="custom_call_tv_size_114sp">114sp</dimen>
+    <dimen name="custom_call_tv_size_68sp">68sp</dimen>
+    <dimen name="custom_call_tv_size_56sp">56sp</dimen>
+    <dimen name="custom_call_tv_size_48sp">48sp</dimen>
+    <dimen name="custom_call_tv_size_42sp">42sp</dimen>
+    <dimen name="custom_call_tv_size_40sp">40sp</dimen>
+    <dimen name="custom_call_tv_size_28sp">28sp</dimen>
+    <dimen name="cruise_finish_size">35sp</dimen>
+<!--endregion-->
+</resources>

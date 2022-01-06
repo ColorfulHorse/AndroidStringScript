@@ -123,4 +123,10 @@
     <string name="table_four_column">4 cột</string>
     <string name="table_five_column">5 cột</string>
     <string name="escorting_finish_time">Tự động hoàn thành thời gian hộ tống (1~30 giây)</string>
+    <string name="birthday_music_set_tip">Nội dung văn bản trên màn hình ma trận chấm</string>
+    <string name="birthday_music_set_sub_tip">Sau khi sửa đổi, nội dung văn bản sẽ được hiển thị trên màn hình ma trận điểm, tối đa 50 ký tự, chỉ có giá trị trong một lần duy nhất</string>
+    <string name="birthday_music_set_tip2">Phát nhạc trong khi giao hàng</string>
+    <string name="birthday_music_set_sub_tip2">Sau khi bật tính năng này, nhạc sẽ được phát trong quá trình giao hàng</string>
+    <string name="birthday_music_set_tip3">Phát nhạc sau khi giao hàng</string>
+    <string name="birthday_music_set_sub_tip3">Sau khi bật chức năng này, nhạc sẽ được phát sau khi hàng đến nơi</string>
 </resources>

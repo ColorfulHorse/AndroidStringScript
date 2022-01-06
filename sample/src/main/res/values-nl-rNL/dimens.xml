@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_into_greeter">28dp</dimen>
+    <dimen name="dialog_error_fix_desc_t_s">68sp</dimen>
+    <dimen name="cruise_task_pause_ll_tv_s">75sp</dimen>
+    <dimen name="turn_back_ll_title_tv_s">75sp</dimen>
+</resources>

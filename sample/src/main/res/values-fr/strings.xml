@@ -128,4 +128,11 @@
     <string name="bumper_title">Coupez le signal anti-collision</string>
     <string name="bumper_desc">Uniquement pour un usage temporaire lorsque les pièces de rechange ne peuvent être remplacées, veuillez être prudents</string>
     <string name="mandatory_networking">Le réseau est nécessaire</string>
+
+    <string name="birthday_music_set_tip">Contenu du texte de l’écran de la matrice de points</string>
+    <string name="birthday_music_set_sub_tip">Après modification, le contenu du texte s’affiche sur l’écran de la matrice de points, jusqu’à 50 caractères, valable une seule fois</string>
+    <string name="birthday_music_set_tip2">Jouer de la musique pendant le service</string>
+    <string name="birthday_music_set_sub_tip2">Une fois cette fonction activée, vous entendrez de la musique pendant le service</string>
+    <string name="birthday_music_set_tip3">Jouer de la musique après le service</string>
+    <string name="birthday_music_set_sub_tip3">Une fois cette fonction activée, vous entendrez de la musique après le service</string>
 </resources>

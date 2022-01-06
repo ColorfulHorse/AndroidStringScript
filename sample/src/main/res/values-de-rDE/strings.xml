@@ -128,4 +128,11 @@
     <string name="bumper_title">Abschneiden des Antikollisionsbalkensignals</string>
     <string name="bumper_desc">Nur für den vorübergehenden Gebrauch, wenn Ersatzteile nicht ausgetauscht werden können, bitte mit Vorsicht vorgehen</string>
     <string name="mandatory_networking">Netzwerk ist erforderlich</string>
+
+    <string name="birthday_music_set_tip">Textinhalt des Dot Matrix-Bildschirms</string>
+    <string name="birthday_music_set_sub_tip">Nach der Modifizierung wird der Textinhalt mit bis zu 50 Zeichen auf dem Punktmatrix-Bildschirm angezeigt, der nur für kurze Zeit gültig ist</string>
+    <string name="birthday_music_set_tip2">Musik während dem Servieren wiedergeben</string>
+    <string name="birthday_music_set_sub_tip2">Nach dem Aktivieren dieser Funktion wird die Musik während des Servierens wiedergegeben</string>
+    <string name="birthday_music_set_tip3">Musik nach dem Servieren wiedergeben</string>
+    <string name="birthday_music_set_sub_tip3">Nach dem Aktivieren dieser Funktion wird die Musik abgespielt, nachdem das Essen serviert wurde</string>
 </resources>

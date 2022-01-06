@@ -123,4 +123,10 @@
     <string name="table_four_column">4 oszlop</string>
     <string name="table_five_column">5 oszlop</string>
     <string name="escorting_finish_time">Automatikus teljes kíséreti idő (1~30 másodperc)</string>
+    <string name="birthday_music_set_tip">Pontmátrix képernyő szöveges tartalma</string>
+    <string name="birthday_music_set_sub_tip">Módosítás után a szöveges tartalom megjelenik a pontmátrix képernyőn, legfeljebb 50 karakterig, csak egyszer érvényes</string>
+    <string name="birthday_music_set_tip2">Zene lejátszása szállítás közben</string>
+    <string name="birthday_music_set_sub_tip2">A funkció bekapcsolása után zene szól a kézbesítés során</string>
+    <string name="birthday_music_set_tip3">Zene lejátszása szállítás után</string>
+    <string name="birthday_music_set_sub_tip3">A funkció bekapcsolása után a szállítmány megérkezése után zene szól</string>
 </resources>

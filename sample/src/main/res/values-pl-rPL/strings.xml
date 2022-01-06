@@ -128,4 +128,11 @@
     <string name="bumper_title">Odetnij sygnał paska antykolizyjnego</string>
     <string name="bumper_desc">Tylko w przypadku tymczasowego użytkowania, gdy części zamienne nie mogą być wymienione, należy zachować ostrożność</string>
     <string name="mandatory_networking">Sieć jest wymagana</string>
+
+    <string name="birthday_music_set_tip">Zawartość tekstowa na wyświetlaczu graficznym</string>
+    <string name="birthday_music_set_sub_tip">Po modyfikacji na wyświetlaczu graficznym zostanie jednorazowo wyświetlona zawartość tekstowa (do 50 znaków)</string>
+    <string name="birthday_music_set_tip2">Odtwarzaj muzykę przy wydawaniu zamówienia</string>
+    <string name="birthday_music_set_sub_tip2">Po włączeniu tej funkcji przy wydawaniu zamówienia będzie odtwarzana muzyka</string>
+    <string name="birthday_music_set_tip3">Odtwarzaj muzykę po wydaniu zamówienia</string>
+    <string name="birthday_music_set_sub_tip3">Po włączeniu tej funkcji po wydaniu zamówienia będzie odtwarzana muzyka</string>
 </resources>

@@ -128,4 +128,11 @@
     <string name="bumper_title">ตัดสัญญาณป้องกันชนบาร์</string>
     <string name="bumper_desc">ใช้งานชั่วคราวเท่านั้น เมื่อชิ้นส่วนสำรองไม่สามารถเปลี่ยนได้โปรดใช้งานด้วยความระมัดระวัง</string>
     <string name="mandatory_networking">ต้องการเครือข่าย</string>
+
+    <string name="birthday_music_set_tip">ข้อความบนหน้าจอ Dot Matrix</string>
+    <string name="birthday_music_set_sub_tip">หลังจากปรับแต่งแล้ว ข้อความจะได้รับการแสดงบนหน้าจอ Dot Matrix โดยมีความยาวได้สูงสุด 50 ตัวอักษรและใช้ได้เพียงครั้งเดียว</string>
+    <string name="birthday_music_set_tip2">เล่นเพลงขณะจัดส่ง</string>
+    <string name="birthday_music_set_sub_tip2">หากเปิดใช้คุณสมบัตินี้ เพลงจะเล่นขณะจัดส่ง</string>
+    <string name="birthday_music_set_tip3">เล่นเพลงเมื่อจัดส่งแล้ว</string>
+    <string name="birthday_music_set_sub_tip3">หากเปิดใช้คุณสมบัตินี้ เพลงจะเล่นหลังจากของที่จัดส่งถึงแล้ว</string>
 </resources>

@@ -123,4 +123,10 @@
     <string name="table_four_column">4 колони</string>
     <string name="table_five_column">5 колони</string>
     <string name="escorting_finish_time">Автоматично пълно време на ескортиране (1~30s)</string>
+    <string name="birthday_music_set_tip">Текстово съдържание на екрана с матрица</string>
+    <string name="birthday_music_set_sub_tip">След модификация текстовото съдържание ще се показва на матричния екран, до 50 знака, валиден само за един път</string>
+    <string name="birthday_music_set_tip2">Пуснете музика по време на доставката</string>
+    <string name="birthday_music_set_sub_tip2">След включване на тази функция музиката ще се възпроизвежда по време на доставката</string>
+    <string name="birthday_music_set_tip3">Пуснете музика след доставката</string>
+    <string name="birthday_music_set_sub_tip3">След включване на тази функция музиката ще се възпроизвежда след пристигането на доставката</string>
 </resources>

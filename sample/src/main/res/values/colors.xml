@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <!-- 颜色规范 -->
+    <!--<color name="C1">#cc3333</color>  &lt;!&ndash; 主题色 &ndash;&gt  #1890FF;-->
+    <color name="C1">#1282DB</color>
+    <!-- 黑色 -->
+    <!-- 分割线 粗细1px -->
+    <!-- 背景色 -->
+    <color name="C7">#ffffff</color>  <!-- 白色 -->
+    <color name="C8">#aa000000</color><!-- 半透明的黑色,用于遮罩 -->
+    <!-- 反应色 -->
+    <color name="C10">#ff3600</color>  <!-- 必填显示色 -->
+    <color name="C11">#222222</color>
+
+    <color name="transparent">#00FFFFFF</color>
+
+    <color name="hardwareColorPrimary">#c08fff</color>
+
+
+    <color name="white">#FFFFFF</color><!-- 白色 -->
+
+    <color name="gray">#808080</color><!--灰色 -->
+
+    <color name="black">#000000</color><!--黑色 -->
+
+
+    <color name="material_light_blue_a700">#0091ea</color>
+
+
+    <color name="charging">#00ca5d</color>
+
+    <color name="blue_btn_bg_color">#AEDEF4</color>
+    <color name="blue_btn_bg_pressed_color">#96BFD2</color>
+
+
+    <color name="theme_main_bg">#C9CED2</color>
+    <color name="theme_main_color">#0072FF</color>
+    <color name="theme_birthday_bg">#FF1A1D23</color>
+    <color name="item_birthday_bg">#FF61666B</color>
+    <color name="table_birthday_bg">#FF393B3D</color>
+
+    <color name="font_color_1">#222222</color>
+    <color name="color_7c7c7c">#7C7C7C</color>
+    <color name="font_disable">#9B9C9F</color>
+    <color name="item_pallet_bg_normal">#ffbbc1c8</color>
+    <color name="table_item_color">#DDE1E5</color>
+    <color name="low_power_color">#FFFB313B</color>
+    <color name="normal_power_color">#FF636363</color>
+    <color name="deliver_pause_tray_bg_normal">#FFCCE3FF</color>
+    <color name="deliver_pause_tray_font">#FF72ADF5</color>
+    <color name="item_cruise_way_bg">#FFE6E9EB</color>
+    <color name="cruise_map_line_color">#FF7E7E7E</color>
+    <color name="switch_text_off">#FFA8A8A8</color>
+    <color name="switch_text_on">#FF1CC33D</color>
+    <color name="click_color_press">#FFBEBEBE</color>
+    <color name="click_color_back_press">#A8A8A8</color>
+    <color name="font_title_black">#FF222222</color>
+    <color name="item_click">#ffa8a8a8</color>
+    <color name="font_disable_color">#ffa8a8a8</color>
+    <color name="deliver_arrive_dish_item_bg">#FFCDD1D5</color>
+    <color name="deliver_arrive_birthday_dish_item_bg">#FF61666B</color>
+    <color name="setting_tray_enable_color">#fffb313b</color>
+    <color name="setting_tray_disable_color">#FFFFBCBD</color>
+    <color name="c_a8a8a8">#A8A8A8</color>
+    <color name="c_393b3d">#393B3D</color>
+    <color name="c_61666b">#61666B</color>
+    <color name="red_alert">#FB313B</color>
+    <color name="c_0072FF">#0072FF</color>
+    <color name="c_d6dbdf">#D6DBDF</color>
+    <color name="c_80_alpha_black">#CC000000</color>
+    <color name="steady_mode_switch_layout_on_color">#0BBA13</color>
+    <color name="color_212121">#212121</color>
+
+    <color name="color_AAAAAA">#AAAAAA</color>
+
+    <color name="c_ebf0f4">#FFEBF0F4</color>
+    <color name="c_7fffffff">#7FFFFFFF</color>
+</resources>

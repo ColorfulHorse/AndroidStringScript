@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimens_into_greeter">24dp</dimen>
+    <dimen name="turn_back_fun_btn_tv_s">16sp</dimen>
+</resources>

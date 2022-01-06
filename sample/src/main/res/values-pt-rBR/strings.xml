@@ -128,4 +128,11 @@
     <string name="bumper_title">Corte o sinal da barra anti-colisão</string>
     <string name="bumper_desc">Somente para uso temporário quando as peças de reposição não podem ser substituídas, por favor, operem com cautela</string>
     <string name="mandatory_networking">Rede é necessária</string>
+
+    <string name="birthday_music_set_tip">Conteúdo do texto da tela de matriz de pontos</string>
+    <string name="birthday_music_set_sub_tip">Após a modificação, o conteúdo do texto será exibido na tela de matriz de pontos, com até 50 caracteres e válido somente por uma única vez</string>
+    <string name="birthday_music_set_tip2">Reproduzir música durante a entrega</string>
+    <string name="birthday_music_set_sub_tip2">Após a ativação desse recurso, haverá reprodução de música durante a entrega</string>
+    <string name="birthday_music_set_tip3">Reproduzir música após a entrega</string>
+    <string name="birthday_music_set_sub_tip3">Após a ativação dessa função, haverá reprodução de música após a entrega</string>
 </resources>

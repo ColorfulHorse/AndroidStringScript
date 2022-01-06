@@ -128,4 +128,11 @@
     <string name="bumper_title">Potong sinyal bar anti-tabrakan</string>
     <string name="bumper_desc">Hanya untuk penggunaan sementara ketika suku cadang tidak dapat diganti, mohon lakukan dengan hati-hati</string>
     <string name="mandatory_networking">Jaringan diperlukan</string>
+
+    <string name="birthday_music_set_tip">Konten teks layar dot matrix</string>
+    <string name="birthday_music_set_sub_tip">Konten teks (maks. 50 karakter) yang sudah diubah akan ditampilkan di layar dot matrix dan hanya akan aktif sekali</string>
+    <string name="birthday_music_set_tip2">Putar musik saat mengantar hidangan</string>
+    <string name="birthday_music_set_sub_tip2">Dengan mengaktifkan fitur ini, musik akan diputar saat mengantar hidangan</string>
+    <string name="birthday_music_set_tip3">Putar musik setelah mengantar hidangan</string>
+    <string name="birthday_music_set_sub_tip3">Dengan mengaktifkan fitur ini, musik akan diputar setelah mengantar hidangan</string>
 </resources>

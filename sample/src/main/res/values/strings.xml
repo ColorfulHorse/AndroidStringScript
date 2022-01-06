@@ -138,4 +138,11 @@
     <string name="usher_voice_play_mode">Usher voice playing mode</string>
     <string name="usher_voice_play_mode_1">Recognize human playback voice</string>
     <string name="usher_voice_play_mode_2">Looping voice</string>
+    <!--  生日模式设置页面  -->
+    <string name="birthday_music_set_tip">Dot matrix screen text content</string>
+    <string name="birthday_music_set_sub_tip">After modification, the text content will be displayed on the dot matrix screen, up to 50 characters, only valid for a single time</string>
+    <string name="birthday_music_set_tip2">Play music during delivery</string>
+    <string name="birthday_music_set_sub_tip2">After turning on this feature, music will be played during delivery</string>
+    <string name="birthday_music_set_tip3">Play music after delivery</string>
+    <string name="birthday_music_set_sub_tip3">After turning on this function, music will be played after the delivery arrives</string>
 </resources>
