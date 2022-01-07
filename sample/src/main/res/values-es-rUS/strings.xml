@@ -1,10 +1,11 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="box_notification">Notificación de sala privada</string>
+    <string name="box_notification_settings">Configuración de la notificación de sala privada</string>
     <string name="cruise_exit_save">Protección de salida del modo crucero</string>
     <string name="deliver_exit_save">Protección de salida de entrega</string>
     <string name="greeter_exit_save">Protección de salida de acompañamiento</string>
     <string name="setting_enter_save">Protección de configuración</string>
-    <string name="box_notification_settings">Configuración de la notificación de sala privada</string>
-    <string name="box_notification">Notificación de sala privada</string>
     <string name="dialog_swith_lora_channel">Cambiando</string>
     <string name="toast_lora_channel_swith_failed">Error de cambio, inténtelo nuevamente.</string>
     <string name="box_setting_add_beeper">Agregar localizador</string>
@@ -13,28 +14,25 @@
     <string name="box_settings_call_list">Lista de localizadores</string>
     <string name="box_settings_del_beeper">Eliminar</string>
     <string name="order_delivery">Modo de entrega secuencial</string>
-    <string name="please_enter_text">Ingresar texto</string>
-    <string name="greeter_speed">Velocidad de acompañamiento </string>
     <string name="has_bind">Vinculado</string>
+    <string name="greeter_speed">Velocidad de acompañamiento </string>
     <string name="un_bind">No vinculado</string>
     <string name="un_select">No seleccionado</string>
     <string name="delete_success">Eliminado correctamente</string>
     <string name="add_success">Agregado correctamente</string>
     <string name="sure_success">Confirmar desvinculación</string>
-    <string name="box_delete_text">¿Eliminar?</string>
-    <string name="box_delete_yes">Sí</string>
-    <string name="box_delete_no">No</string>
-    <string name="stay_point_setting_notice">Ubicación de permanencia en el modo crucero</string>
-    <string name="custom_voice_most_10">Se puede agregar un máximo de 10 mensajes de voz personalizada.</string>
     <string name="lost_localization_laser_locate_lose">Error de posicionamiento. Mueva el robot a la ubicación de inicio y reinícielo para volver a intentarlo.</string>
     <string name="abnormal_signs">Indicador de dirección incorrecto. Muévame hacia un indicador de dirección correcto.</string>
+    <string name="second">s</string>
+    <string name="stay_point_setting">Configuración de la ubicación de permanencia</string>
+    <string name="stay_point_setting_notice">Ubicación de permanencia en el modo crucero</string>
     <string name="pause_time_format">%1$s M %2$s S</string>
     <string name="please_input_custom_voice">Ingresar voz personalizada</string>
     <string name="please_input_copy_write">Ingresar texto en pantalla</string>
     <string name="timer_minute">Minuto</string>
     <string name="stay_point_timer">%1$s:%2$s</string>
     <string name="call_freeze_time">Tiempo de reanudación automática desde el bloqueo (0 s - 300 s)</string>
-    <string name="stay_point_setting">Configuración de la ubicación de permanencia</string>
+    <string name="custom_voice_most_10">Se puede agregar un máximo de 10 mensajes de voz personalizada.</string>
     <string name="Still_need_to_modify">Modificar de todos modos</string>
     <string name="stay_point_timer_be_overwrite">Esta configuración sobrescribirá el tiempo de permanencia original.</string>
     <string name="stay_point_screen_copy_write">Texto en pantalla para la ubicación de permanencia</string>
@@ -55,6 +53,7 @@
     <string name="language">Idioma</string>
     <string name="translation">Traducir</string>
     <string name="go_to_call_point">Mover al punto de llamada</string>
+    <string name="please_enter_text">Ingresar texto</string>
     <string name="stay_time_setting">Configuración del tiempo de permanencia</string>
     <string name="stay_time">Tiempo de permanencia</string>
     <string name="fail_sync_map">No se pudo sincronizar el mapa. Inténtelo nuevamente.</string>
@@ -67,6 +66,9 @@
     <string name="stay_point_screen_text">Texto en pantalla para la ubicación de permanencia</string>
     <string name="delivery_alarm_iknow">Entendido</string>
     <string name="delivery_alarm_notice">Parece que se ha equivocado de bandeja. Coloque las cosas en su sitio y busque la bandeja con la luz encendida.</string>
+    <string name="box_delete_text">¿Eliminar?</string>
+    <string name="box_delete_yes">Sí</string>
+    <string name="box_delete_no">No</string>
     <string name="deliver_setting_voice_switch">Interruptor de múltiples voces de entrega</string>
     <string name="deliver_setting_voice_switch_sub">Active esta función para configurar de forma rápida los paquetes de voz en la página de inicio del modo de entrega</string>
     <string name="advanced_brake">Nivel de frenado</string>
@@ -88,10 +90,9 @@
     <string name="setting_repeat_pre_task">Repetir la tarea anterior</string>
     <string name="tips_drag">Mantenga pulsado y arrastre para cambiar el orden de los grupos</string>
     <string name="no_longer_prompt">No volver a recordar</string>
-    <string name="custom_call_loading_tip">Recibiendo datos. Espere</string>
     <string name="custom_call_arrive_title">Llegada a la llamada</string>
+    <string name="custom_call_loading_tip">Recibiendo datos. Espere</string>
     <string name="custom_call_cancel_tip">Tarea cancelada. Listo para regresar</string>
-    <string name="second">s</string>
     <string name="box_open_xbroadcast">Activar transmisión Agregar localizador</string>
     <string name="drop_check_content">Se detectó un riesgo de caída, póngase en contacto con soporte técnico.\nPara mover el robot, pulse el botón rojo de parada de emergencia ubicado en la cabeza del robot.</string>
     <string name="drop_check_goto">Resolución de anomalías</string>
@@ -127,6 +128,7 @@
     <string name="bumper_title">Corte la señal de barra anticoli.</string>
     <string name="bumper_desc">Sólo para uso temporal cuando las piezas de repuesto no pueden ser reemplaz, por favor opere con precaución</string>
     <string name="mandatory_networking">Red es necesaria</string>
+
     <string name="birthday_music_set_tip">Contenido de texto de la pantalla de matriz de puntos</string>
     <string name="birthday_music_set_sub_tip">Después de la modificación, el contenido del texto se mostrará en la pantalla de matriz de puntos, hasta 50 caracteres, solo válido por una vez</string>
     <string name="birthday_music_set_tip2">Reproduce música durante la entrega</string>

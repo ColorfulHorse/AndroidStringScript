@@ -25,10 +25,10 @@ object ExcelHelper {
     /**
      * 获取excel某个表的数据  <表名，<name，<语言目录，值>>>
      */
-    fun getSheetsData(filePath: String): LinkedHashMap<String, CsvBean> {
+    fun getSheetsData(filePath: String): LinkedHashMap<String, LinkedHashMap<String, LinkedHashMap<String, String>>> {
         val inputStream = FileInputStream(filePath)
         val excelWBook = XSSFWorkbook(inputStream)
-        val map = linkedMapOf<String, CsvBean>()
+        val map = linkedMapOf<String, LinkedHashMap<String, LinkedHashMap<String, String>>>()
         excelWBook.forEach {
             val dataMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
             val head = ArrayList<String>()
@@ -59,7 +59,7 @@ object ExcelHelper {
                 excelWBook.close()
                 inputStream.close()
             }
-            map[it.sheetName] = CsvBean(head, dataMap)
+            map[it.sheetName] = dataMap
         }
         excelWBook.close()
         return map

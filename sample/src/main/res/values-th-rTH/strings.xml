@@ -1,10 +1,11 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="box_notification">การแจ้งเตือนสำหรับเสิร์ฟห้องส่วนตัว</string>
+    <string name="box_notification_settings">การตั้งค่าการแจ้งเตือนสำหรับเสิร์ฟห้องส่วนตัว</string>
     <string name="cruise_exit_save">ปิดใช้การปกป้องการเคลื่อนที่ต่อเนื่องแล้ว </string>
     <string name="deliver_exit_save">การปกป้องไม่ให้ออกจากโหมดการเสิร์ฟอาหาร</string>
     <string name="greeter_exit_save">การปกป้องไม่ให้ออกจากโหมดการนำทาง</string>
     <string name="setting_enter_save">การปกป้องไม่ให้เข้าถึงการตั้งค่า</string>
-    <string name="box_notification_settings">การตั้งค่าการแจ้งเตือนสำหรับเสิร์ฟห้องส่วนตัว</string>
-    <string name="box_notification">การแจ้งเตือนสำหรับเสิร์ฟห้องส่วนตัว</string>
     <string name="dialog_swith_lora_channel">กำลังเปลี่ยน</string>
     <string name="toast_lora_channel_swith_failed">เปลี่ยนไม่สำเร็จ โปรดลองใหม่</string>
     <string name="box_setting_add_beeper">เพิ่มวิทยุติดตามตัว</string>
@@ -13,28 +14,25 @@
     <string name="box_settings_call_list">รายการวิทยุติดตามตัว</string>
     <string name="box_settings_del_beeper">ลบ</string>
     <string name="order_delivery">โหมดเสิร์ฟอาหารตามลำดับ</string>
-    <string name="please_enter_text">ป้อนข้อความ</string>
-    <string name="greeter_speed">ความเร็วในการนำทาง </string>
     <string name="has_bind">เชื่อมโยงแล้ว</string>
+    <string name="greeter_speed">ความเร็วในการนำทาง </string>
     <string name="un_bind">ไม่ได้เชื่อมโยง</string>
     <string name="un_select">ไม่ได้เลือก</string>
     <string name="delete_success">ลบเรียบร้อย</string>
     <string name="add_success">เพิ่มเรียบร้อย</string>
     <string name="sure_success">ยืนยันการยกเลิกการเชื่อมโยง</string>
-    <string name="box_delete_text">ลบใช่ไหม</string>
-    <string name="box_delete_yes">ใช่</string>
-    <string name="box_delete_no">ไม่ใช่</string>
-    <string name="stay_point_setting_notice">ตำแหน่งการหยุดยืนระหว่างการเคลื่อนที่ต่อเนื่อง</string>
-    <string name="custom_voice_most_10">เพิ่มข้อความเสียงแบบกำหนดเองได้สูงสุด 10 ข้อความ</string>
     <string name="lost_localization_laser_locate_lose">เกิดข้อผิดพลาดในการระบุตำแหน่ง พาหุ่นยนต์ไปยังตำแหน่งเริ่มต้นแล้วรีสตาร์ทเพื่อลองใหม่</string>
     <string name="abnormal_signs">ป้ายกำกับไม่ถูกต้อง พาไปไว้ใต้ป้ายกำกับที่ถูกต้อง</string>
+    <string name="second">วินาที</string>
+    <string name="stay_point_setting">การตั้งค่าตำแหน่งการหยุดยืน</string>
+    <string name="stay_point_setting_notice">ตำแหน่งการหยุดยืนระหว่างการเคลื่อนที่ต่อเนื่อง</string>
     <string name="pause_time_format">%1$s M %2$s S</string>
     <string name="please_input_custom_voice">ป้อนเสียงแบบกำหนดเอง</string>
     <string name="please_input_copy_write">ป้อนข้อความบนหน้าจอ</string>
     <string name="timer_minute">นาที</string>
     <string name="stay_point_timer">%1$s:%2$s</string>
     <string name="call_freeze_time">เวลากลับมาทำงานโดยอัตโนมัติจากโหมดหยุดค้างการเรียกใช้งาน (0-300 วินาที)</string>
-    <string name="stay_point_setting">การตั้งค่าตำแหน่งการหยุดยืน</string>
+    <string name="custom_voice_most_10">เพิ่มข้อความเสียงแบบกำหนดเองได้สูงสุด 10 ข้อความ</string>
     <string name="Still_need_to_modify">ยืนยันแก้ไข</string>
     <string name="stay_point_timer_be_overwrite">การตั้งค่านี้จะแทนที่เวลาในการหยุดยืนเดิม</string>
     <string name="stay_point_screen_copy_write">ข้อความบนหน้าจอสำหรับตำแหน่งที่หุ่นยนต์หยุดยืน</string>
@@ -55,6 +53,7 @@
     <string name="language">ภาษา</string>
     <string name="translation">แปล</string>
     <string name="go_to_call_point">ย้ายไปที่จุดการเรียกใช้งาน</string>
+    <string name="please_enter_text">ป้อนข้อความ</string>
     <string name="stay_time_setting">การตั้งค่าเวลาในการหยุดยืน</string>
     <string name="stay_time">เวลาในการหยุดยืน</string>
     <string name="fail_sync_map">ซิงค์แผนที่ไม่สำเร็จ โปรดลองใหม่</string>
@@ -67,6 +66,9 @@
     <string name="stay_point_screen_text">ข้อความบนหน้าจอสำหรับตำแหน่งที่หุ่นยนต์หยุดยืน</string>
     <string name="delivery_alarm_iknow">รับทราบ</string>
     <string name="delivery_alarm_notice">ดูเหมือนว่าคุณรับไปผิดถาด โปรดวางอาหารคืนลงถาดแล้วรับอาหารบนถาดที่มีแสงไฟ</string>
+    <string name="box_delete_text">ลบใช่ไหม</string>
+    <string name="box_delete_yes">ใช่</string>
+    <string name="box_delete_no">ไม่ใช่</string>
     <string name="deliver_setting_voice_switch">สวิตช์แบบหลายเสียงสำหรับการเสิร์ฟอาหาร</string>
     <string name="deliver_setting_voice_switch_sub">เปิดใช้ฟังก์ชันนี้เพื่อการตั้งค่าชุดเสียงด่วนในหน้าหลักของโหมดการเสิร์ฟอาหาร</string>
     <string name="advanced_brake">ระดับการหยุด</string>
@@ -88,10 +90,9 @@
     <string name="setting_repeat_pre_task">ทำงานก่อนหน้าซ้ำ</string>
     <string name="tips_drag">กดค้างแล้วลากเพื่อเปลี่ยนลำดับกลุ่ม</string>
     <string name="no_longer_prompt">ไม่ต้องเตือนอีก</string>
-    <string name="custom_call_loading_tip">กำลังรับข้อมูล โปรดรอสักครู่</string>
     <string name="custom_call_arrive_title">การมาถึงตามการเรียกใช้งาน</string>
+    <string name="custom_call_loading_tip">กำลังรับข้อมูล โปรดรอสักครู่</string>
     <string name="custom_call_cancel_tip">ยกเลิกงานแล้ว พร้อมเดินกลับ</string>
-    <string name="second">วินาที</string>
     <string name="box_open_xbroadcast">เปิดใช้การกระจายเสียงเพิ่มวิทยุติดตามตัว</string>
     <string name="drop_check_content">ตรวจพบความเสี่ยงในการหกคะเมน โปรดติดต่อฝ่ายสนับสนุนด้านเทคนิค\nหากต้องการเคลื่อนย้ายหุ่นยนต์ โปรดกดปุ่มหยุดฉุกเฉินสีแดงด้านบนหุ่นยนต์</string>
     <string name="drop_check_goto">แก้ไขความผิดปกติ</string>
@@ -127,6 +128,7 @@
     <string name="bumper_title">ตัดสัญญาณป้องกันชนบาร์</string>
     <string name="bumper_desc">ใช้งานชั่วคราวเท่านั้น เมื่อชิ้นส่วนสำรองไม่สามารถเปลี่ยนได้โปรดใช้งานด้วยความระมัดระวัง</string>
     <string name="mandatory_networking">ต้องการเครือข่าย</string>
+
     <string name="birthday_music_set_tip">ข้อความบนหน้าจอ Dot Matrix</string>
     <string name="birthday_music_set_sub_tip">หลังจากปรับแต่งแล้ว ข้อความจะได้รับการแสดงบนหน้าจอ Dot Matrix โดยมีความยาวได้สูงสุด 50 ตัวอักษรและใช้ได้เพียงครั้งเดียว</string>
     <string name="birthday_music_set_tip2">เล่นเพลงขณะจัดส่ง</string>

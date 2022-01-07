@@ -40,10 +40,11 @@ object OutputHelper {
     )
 
 
-
     fun writeFile(
         file: File,
-        map: LinkedHashMap<String, AndroidStringBean>) {
+        map: LinkedHashMap<String, String>,
+        lang: String
+    ) {
         if (!file.parentFile.exists()) {
             file.parentFile.mkdirs()
         }
@@ -54,11 +55,11 @@ object OutputHelper {
         val writer = OutputStreamWriter(FileOutputStream(file), "UTF-8")
 
         writer.appendln(headFlag)
-        map.forEach {
-            if (it.value.word.isEmpty()) {
-                Log.d(TAG, "没有翻译：lang: ${it.key} name: ${it.value.name}")
+        map.forEach { (name, word) ->
+            if (word.isEmpty()) {
+                Log.d(TAG, "没有翻译：lang: $lang name: $name")
             } else {
-                writer.appendln("    <string name=\"${it.value.name}\">${it.value.word}</string>")
+                writer.appendln("    <string name=\"$name\">$word</string>")
             }
         }
         writer.appendln(endFlag)

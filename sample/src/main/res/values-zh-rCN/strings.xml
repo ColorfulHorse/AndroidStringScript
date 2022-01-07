@@ -1,40 +1,39 @@
-<resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <string name="box_notification">包厢通知</string>
+    <string name="box_notification_settings">包厢通知设置</string>
     <string name="cruise_exit_save">巡航退出保护</string>
     <string name="deliver_exit_save">送餐退出保护</string>
     <string name="greeter_exit_save">领位退出保护</string>
     <string name="setting_enter_save">设置进入保护</string>
-    <string name="box_notification_settings">包厢通知设置</string>
-    <string name="box_notification">包厢通知</string>
     <string name="dialog_swith_lora_channel">切换中</string>
     <string name="toast_lora_channel_swith_failed">切换失败，请重试</string>
     <string name="box_setting_add_beeper">添加呼叫器</string>
+    <string name="box_open_xbroadcast">开启广播添加呼叫器</string>
     <string name="box_settings_refresh">刷新</string>
     <string name="box_settings_channel_set">信道设置</string>
     <string name="box_settings_call_list">呼叫器列表</string>
     <string name="box_settings_del_beeper">删除</string>
     <string name="order_delivery">顺序配送模式</string>
-    <string name="please_enter_text">请输入文字</string>
-    <string name="greeter_speed">领位速度</string>
     <string name="has_bind">已绑定</string>
+    <string name="greeter_speed">领位速度</string>
     <string name="un_bind">未绑定</string>
     <string name="un_select">未选中</string>
     <string name="delete_success">成功删除</string>
     <string name="add_success">成功添加</string>
     <string name="sure_success">确认解绑</string>
-    <string name="box_delete_text">是否删除?</string>
-    <string name="box_delete_yes">是</string>
-    <string name="box_delete_no">否</string>
-    <string name="stay_point_setting_notice">机器人巡航过程中的逗留点</string>
-    <string name="custom_voice_most_10">自定义语音最多添加10条</string>
     <string name="lost_localization_laser_locate_lose">定位异常，请将机器人推到开机点，重启尝试恢复</string>
     <string name="abnormal_signs">路标错误，请把我推到其他正确路标下方</string>
+    <string name="second">秒</string>
+    <string name="stay_point_setting">逗留点设置</string>
+    <string name="stay_point_setting_notice">机器人巡航过程中的逗留点</string>
     <string name="pause_time_format">%1$s 分 %2$s 秒</string>
     <string name="please_input_custom_voice">请输入自定义语音</string>
     <string name="please_input_copy_write">请输入屏幕文案</string>
     <string name="timer_minute">分钟</string>
     <string name="stay_point_timer">%1$s:%2$s</string>
     <string name="call_freeze_time">呼叫冻结自动恢复时间(0-300秒)</string>
-    <string name="stay_point_setting">逗留点设置</string>
+    <string name="custom_voice_most_10">自定义语音最多添加10条</string>
     <string name="Still_need_to_modify">仍要修改</string>
     <string name="stay_point_timer_be_overwrite">此设置将覆盖原本逗留时间</string>
     <string name="stay_point_screen_copy_write">逗留点屏幕文案</string>
@@ -55,6 +54,7 @@
     <string name="language">语言</string>
     <string name="translation">翻译</string>
     <string name="go_to_call_point">前往呼叫点</string>
+    <string name="please_enter_text">请输入文字</string>
     <string name="stay_time_setting">逗留时间设置</string>
     <string name="stay_time">逗留时间</string>
     <string name="fail_sync_map">同步地图失败,请重试</string>
@@ -67,6 +67,9 @@
     <string name="stay_point_screen_text">逗留点屏幕文案</string>
     <string name="delivery_alarm_iknow">我知道了</string>
     <string name="delivery_alarm_notice">您好像取错托盘了噢，请将物品 放回原托盘，拿取亮灯托盘上的 物品噢。</string>
+    <string name="box_delete_text">是否删除?</string>
+    <string name="box_delete_yes">是</string>
+    <string name="box_delete_no">否</string>
     <string name="deliver_setting_voice_switch">配送多语音开关</string>
     <string name="deliver_setting_voice_switch_sub">开启此功能后，送餐模式首页可以快捷设置语音包</string>
     <string name="advanced_brake">制动等级</string>
@@ -91,8 +94,6 @@
     <string name="custom_call_loading_tip">正在接收数据，请稍后</string>
     <string name="custom_call_arrive_title">呼叫到达</string>
     <string name="custom_call_cancel_tip">任务被取消，准备返回</string>
-    <string name="second">秒</string>
-    <string name="box_open_xbroadcast">开启广播添加呼叫器</string>
     <string name="advanced_anti_fall">防跌落</string>
     <string name="advanced_anti_fall_content">建议开启，若判断场景中无跌落风险，且存在误触情况，可关闭此功能，关闭后防跌落功能将不再生效</string>
     <string name="drop_check_content">检测到跌落风险，请联系技术支持4000826660\n如需移动机器人，请按下头部红色急停按钮</string>
@@ -131,13 +132,15 @@
     <string name="mandatory_networking">进入调试页面需要联网</string>
     <string name="tip_tray_alarm">关闭此开关后取错告警功能将无法使用，确定要关闭吗？</string>
     <string name="more_than_text_size">字符超出50个</string>
-    <string name="usher_voice_play_mode">门迎语音播放模式</string>
-    <string name="usher_voice_play_mode_1">识别到人播放语音</string>
-    <string name="usher_voice_play_mode_2">循环播放语音</string>
+
     <string name="birthday_music_set_tip">点阵屏文字内容</string>
     <string name="birthday_music_set_sub_tip">修改后，会在点阵屏上显示文字内容，最多50个字，仅单次有效</string>
     <string name="birthday_music_set_tip2">配送中播放音乐</string>
     <string name="birthday_music_set_sub_tip2">开启此功能后，配送途中会播放音乐</string>
     <string name="birthday_music_set_tip3">送达后播放音乐</string>
     <string name="birthday_music_set_sub_tip3">开启此功能后，配送到达后会播放音乐</string>
+
+    <string name="usher_voice_play_mode">门迎语音播放模式</string>
+    <string name="usher_voice_play_mode_1">识别到人播放语音</string>
+    <string name="usher_voice_play_mode_2">循环播放语音</string>
 </resources>

@@ -7,7 +7,7 @@ import com.greensun.string_scripts.logger.Log
 import java.io.File
 
 // 是否只导入指定语言
-const val useInclude = true
+const val useInclude = false
 // 指定语言
 val importInclude = listOf<String>(
     "values-ja-rJP",
@@ -34,24 +34,21 @@ fun main() {
     Log.i("ImportFromExcelScript", moduleDirList?.map { it.name }.toString())
     val filePath = "./module_string_scripts/strings.xlsx"
     val sheetsData = ExcelHelper.getSheetsData(filePath)
-
     moduleDirList.forEach {
         // 模块名对应excel表数据  <name，<语言目录，值>>
         val newData = sheetsData[it.name]
         if (newData != null) {
+            val newLangNameMap = WordHelper.revertResData(newData)
             val parentFile = File(it, "src/main/res")
-            // <语言目录（如values-zh-rCN），<name，bean>>
-            var resMap = WordHelper.collectRes(parentFile)
-            // 将资源转换格式 <name，<语言目录，值>>
-            val resData = WordHelper.transformResData(resMap)
-            WordHelper.mergeStringData(newData, resData)
-            resMap = WordHelper.revertResData(resData)
+            // 项目中读出的string map，<语言目录（如values-zh-rCN），<name，word>>
+            var resLangNameMap = WordHelper.collectRes(parentFile)
+            WordHelper.mergeLangNameString(newLangNameMap, resLangNameMap)
             if (useInclude) {
-                resMap = resMap.filterKeys { lang ->
+                resLangNameMap = resLangNameMap.filterKeys { lang ->
                     importInclude.contains(lang)
-                } as LinkedHashMap<String, LinkedHashMap<String, AndroidStringBean>>
+                } as LinkedHashMap<String, LinkedHashMap<String, String>>
             }
-            WordHelper.importWords(resMap, parentFile)
+            WordHelper.importWords(resLangNameMap, parentFile)
         }
     }
 }
