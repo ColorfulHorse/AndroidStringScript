@@ -1,7 +1,6 @@
 package com.greensun.string_scripts.helper
 
 
-import com.greensun.string_scripts.bean.AndroidStringBean
 import com.greensun.string_scripts.logger.Log
 import java.io.File
 import java.io.FileOutputStream

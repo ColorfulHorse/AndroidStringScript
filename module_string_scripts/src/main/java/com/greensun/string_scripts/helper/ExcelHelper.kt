@@ -1,6 +1,5 @@
 package com.greensun.string_scripts.helper
 
-import com.greensun.string_scripts.bean.CsvBean
 import com.greensun.string_scripts.logger.Log
 import org.apache.poi.ss.usermodel.CellType
 import org.apache.poi.ss.usermodel.Row.MissingCellPolicy
@@ -72,7 +71,12 @@ object ExcelHelper {
      * @param rowNum    行号
      * @param colNum    列号
      */
-    private fun getCellData(excelWBook: XSSFWorkbook, sheetName: String, rowNum: Int, colNum: Int): String {
+    private fun getCellData(
+        excelWBook: XSSFWorkbook,
+        sheetName: String,
+        rowNum: Int,
+        colNum: Int
+    ): String {
         val excelWSheet = excelWBook.getSheet(sheetName)
         try {
             val cell = excelWSheet.getRow(rowNum).getCell(colNum)
@@ -104,7 +108,13 @@ object ExcelHelper {
      * @param rowNum    行号
      * @param colNum    列号
      */
-    fun setCellData(filePath: String, sheetName: String, rowNum: Int, colNum: Int, resultValue: String) {
+    fun setCellData(
+        filePath: String,
+        sheetName: String,
+        rowNum: Int,
+        colNum: Int,
+        resultValue: String
+    ) {
         val inputStream = FileInputStream(filePath)
         val excelWBook = XSSFWorkbook(inputStream)
         val excelWSheet = excelWBook.getSheet(sheetName)
@@ -140,12 +150,12 @@ object ExcelHelper {
         sheetName: String,
         head: ArrayList<String>,
         res: LinkedHashMap<String, LinkedHashMap<String, String>>,
-        excelWBook:XSSFWorkbook,index:Int,size:Int
+        excelWBook: XSSFWorkbook, index: Int, size: Int
     ) {
         val file = File(filePath)
         if (file.exists()) {
             file.delete()
-        }else {
+        } else {
             file.parentFile.mkdirs()
             file.createNewFile()
         }
@@ -190,7 +200,7 @@ object ExcelHelper {
         } catch (e: Exception) {
             Log.e(TAG, "set excel data error-->$e")
         }
-        if (index >= size){
+        if (index >= size) {
             try {
                 val fileOut = FileOutputStream(filePath)
                 excelWBook.write(fileOut)
