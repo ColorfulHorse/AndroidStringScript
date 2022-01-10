@@ -172,12 +172,13 @@ object WordHelper {
                 }
             } else {
                 // 项目中不存在该语言的字符，将excel表中的插入
-                v.forEach { (lang, word) ->
-                    if (lang.isNotEmpty() && word.isNotBlank()) {
-                        Log.e(TAG, "新增string：[name: $lang, lang: $lang, 新值: $word]")
+                v.forEach { (name, word) ->
+                    if (name.isNotBlank() && word.isNotEmpty()) {
+                        Log.e(TAG, "新增string：[name: $name, lang: $lang, 新值: $word]")
+                        val wordMap = resData.computeIfAbsent(lang) { linkedMapOf() }
+                        wordMap[name] = word
                     }
                 }
-                resData[lang] = v
             }
         }
     }
