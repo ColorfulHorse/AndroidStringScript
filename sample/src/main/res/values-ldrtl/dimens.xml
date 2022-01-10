@@ -1,6 +1,0 @@
-<resources>
-
-    <dimen name="layout_pallet_item_margin2">35dp</dimen>
-    <dimen name="layout_pallet_item_margin1">23dp</dimen>
-
-</resources>

@@ -1,6 +1,5 @@
 package com.greensun.string_scripts
 
-import com.greensun.string_scripts.bean.AndroidStringBean
 import com.greensun.string_scripts.helper.ExcelHelper
 import com.greensun.string_scripts.helper.WordHelper
 import com.greensun.string_scripts.logger.Log
@@ -8,6 +7,7 @@ import java.io.File
 
 // 是否只导入指定语言
 const val useInclude = false
+
 // 指定语言
 val importInclude = listOf<String>(
     "values-ja-rJP",
