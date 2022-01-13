@@ -10,6 +10,8 @@ object WordHelper {
 
     // 第一列存放string的name，作为第二表头
     private const val colHead = "name"
+    private const val defaultKey = "values"
+    private const val cnKey = "values-zh-rCN"
 
     /**
      *  转换string map数据结构，以name为行标识方便写入excel
@@ -25,7 +27,20 @@ object WordHelper {
                 wordRes[langDir] = word
             }
         }
-        return resData
+        // 由于可能存在不同key但是相同内容的string，导出时将内容相同的string聚合到一起
+        val key = if (resData.containsKey(cnKey)) cnKey else defaultKey
+        val groups = resData.entries.groupBy {
+            it.value[key]
+        }
+        return groups.entries.fold<Map.Entry<String?, List<MutableMap.MutableEntry<String, LinkedHashMap<String, String>>>>, MutableMap<String, LinkedHashMap<String, String>>>(
+            mutableMapOf()
+        ) { sum, group ->
+
+            group.value.forEach { map ->
+                sum[map.key] = map.value
+            }
+            sum
+        } as LinkedHashMap<String, LinkedHashMap<String, String>>
     }
 
     /**
