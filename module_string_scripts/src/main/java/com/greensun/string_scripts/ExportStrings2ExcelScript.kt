@@ -29,7 +29,7 @@ fun main() {
         val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
         if (hashMap.isEmpty())
             return
-        // 将资源转换格式 <中文，<语言目录，值>>
+        // 将资源转换格式 <name，<语言目录，值>>
         val resData = WordHelper.processSameWords(WordHelper.transformResData(hashMap))
 
         ExcelHelper.resource2File(

@@ -32,7 +32,11 @@ object WordHelper {
         return if (isBaseOnWord) {
             // 去重
             source.entries.distinctBy {
-                it.value[baseLang]
+                val baseWord = it.value[baseLang]
+                return@distinctBy if (!baseWord.isNullOrEmpty())
+                    baseWord
+                else
+                    it
             }.fold(linkedMapOf()) { acc, entry ->
                 acc[entry.key] = entry.value
                 acc
@@ -40,7 +44,11 @@ object WordHelper {
         } else {
             // 相同的排到一起
             source.entries.sortedBy {
-                it.value[baseLang]
+                val baseWord = it.value[baseLang]
+                if (!baseWord.isNullOrEmpty())
+                    return@sortedBy baseWord
+                else
+                    return@sortedBy null
             }.fold(linkedMapOf()) { acc, entry ->
                 acc[entry.key] = entry.value
                 acc
@@ -62,6 +70,7 @@ object WordHelper {
                 wordRes[langDir] = word
             }
         }
+        Log.e("resData", "resData: ${resData.size}")
         return resData
     }
 
@@ -122,8 +131,8 @@ object WordHelper {
                     }
                 }
                 hashMap[it.name] = data
+                Log.d(TAG, "${res.parent} : 语言${it.name} 有: ${data.size} 个")
             }
-            Log.d(TAG, "${res.parent} : 语言${it.name} 有: ${data.size} 个")
         }
         return hashMap
     }
