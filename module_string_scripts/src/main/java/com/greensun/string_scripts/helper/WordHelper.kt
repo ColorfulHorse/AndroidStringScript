@@ -33,7 +33,7 @@ object WordHelper {
             // 去重
             source.entries.distinctBy {
                 val baseWord = it.value[baseLang]
-                return@distinctBy if (!baseWord.isNullOrEmpty())
+                return@distinctBy if (!baseWord.isNullOrBlank())
                     baseWord
                 else
                     it
@@ -204,7 +204,12 @@ object WordHelper {
                 // 寻找基准值相同的string
                 val sameWords = baseLangMap.map { (name, newWord) ->
                     val oldBaseWord = resData[baseLang]?.get(name)
-                    return@map name to resData[baseLang]?.filter { it.value == oldBaseWord }?.keys
+                    return@map name to resData[baseLang]?.filter {
+                        if (!oldBaseWord.isNullOrBlank()) {
+                            return@filter it.value == oldBaseWord
+                        }
+                        false
+                    }?.keys
                 }
                 sameWords.forEach { pair ->
                     Log.e(TAG, "newName:${pair.first} mapping old names:${pair.second}")
