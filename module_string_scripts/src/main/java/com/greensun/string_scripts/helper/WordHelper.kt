@@ -10,8 +10,43 @@ object WordHelper {
 
     // 第一列存放string的name，作为第二表头
     private const val colHead = "name"
-    private const val defaultKey = "values"
-    private const val cnKey = "values-zh-rCN"
+    private const val DEFAULT_LANG = "values"
+    private const val BASE_LANG = "values-zh-rCN"
+
+    // 是否将基准语言的值相同（即使name不同）的string也视为同一个string
+    // 比如以中文为基准，那么<string name="name1">相同值</string> 等同于 <string name="name2">相同值</string>
+    // 这样的话可以以某一语言为基准[导出时去重/导入时恢复]恢复内容重复的string
+    // 导入导出时应该用同一个基准
+    private const val isBaseOnWord = true
+
+    /**
+     *  处理可能出现的相同内容但是不同key的string
+     *  [source] <name，<语言目录，word>>
+     *  @return <name，<语言目录，word>>
+     */
+    fun processSameWords(source: LinkedHashMap<String, LinkedHashMap<String, String>>): LinkedHashMap<String, LinkedHashMap<String, String>> {
+        // 由于可能存在不同key但是相同内容的string，导出时将内容相同的string聚合到一起
+        val haveCNKey = source.entries.first().value.containsKey(BASE_LANG)
+        val baseLang = if (haveCNKey) BASE_LANG else DEFAULT_LANG
+        // 是否根据中文或者默认语言的内容为基准去重，否则将相同的内容行排序到一起
+        return if (isBaseOnWord) {
+            // 去重
+            source.entries.distinctBy {
+                it.value[baseLang]
+            }.fold(linkedMapOf()) { acc, entry ->
+                acc[entry.key] = entry.value
+                acc
+            }
+        } else {
+            // 相同的排到一起
+            source.entries.sortedBy {
+                it.value[baseLang]
+            }.fold(linkedMapOf()) { acc, entry ->
+                acc[entry.key] = entry.value
+                acc
+            }
+        }
+    }
 
     /**
      *  转换string map数据结构，以name为行标识方便写入excel
@@ -27,20 +62,7 @@ object WordHelper {
                 wordRes[langDir] = word
             }
         }
-        // 由于可能存在不同key但是相同内容的string，导出时将内容相同的string聚合到一起
-        val key = if (resData.containsKey(cnKey)) cnKey else defaultKey
-        val groups = resData.entries.groupBy {
-            it.value[key]
-        }
-        return groups.entries.fold<Map.Entry<String?, List<MutableMap.MutableEntry<String, LinkedHashMap<String, String>>>>, MutableMap<String, LinkedHashMap<String, String>>>(
-            mutableMapOf()
-        ) { sum, group ->
-
-            group.value.forEach { map ->
-                sum[map.key] = map.value
-            }
-            sum
-        } as LinkedHashMap<String, LinkedHashMap<String, String>>
+        return resData
     }
 
     /**
@@ -161,38 +183,52 @@ object WordHelper {
         newData: LinkedHashMap<String, LinkedHashMap<String, String>>,
         resData: LinkedHashMap<String, LinkedHashMap<String, String>>
     ) {
-        newData.forEach { (lang, v) ->
-            // 排除第一行，第一行name为空
-            if (lang.isEmpty())
-                return@forEach
-            // 当前项目中一条包含多语种的string map
-            val nameWordMap = resData[lang]
-            if (nameWordMap != null) {
-                // 项目中存在该name的字符，遍历每种语言的值，依次覆盖为excel中的新值
-                v.forEach { (name, newWord) ->
-                    if (name.isNotEmpty() && newWord.isNotBlank()) {
-                        val oldWord = nameWordMap[name]
-                        if (oldWord != null && oldWord.isNotEmpty()) {
-                            if (oldWord != newWord) {
-                                Log.e(
-                                    TAG,
-                                    "替换string：[name: $name, lang: $name, 旧值：$oldWord}, 新值：$newWord]"
-                                )
-                            }
-                        } else {
-                            Log.e(TAG, "新增string：[name: $name, lang: $name, 新值: $newWord]")
+        if (isBaseOnWord) {
+            /**
+             * 1. excel中某个string name匹配到了项目中的某个string name
+             * 2. 找到项目中和该string基准语言的内容相同的其他string
+             * 3. 将这些string视为相同的string，覆盖/添加为excel中的值
+             */
+            val baseLang = if (resData.containsKey(BASE_LANG)) BASE_LANG else DEFAULT_LANG
+            val baseLangMap = newData[baseLang]
+            if (baseLangMap != null) {
+                // 寻找基准值相同的string
+                val sameWords = baseLangMap.map { (name, newWord) ->
+                    val oldBaseWord = resData[baseLang]?.get(name)
+                    return@map name to resData[baseLang]?.filter { it.value == oldBaseWord }?.keys
+                }
+                sameWords.forEach { pair ->
+                    Log.e(TAG, "newName:${pair.first} mapping old names:${pair.second}")
+                    val newName = pair.first
+                    pair.second?.forEach { oldName ->
+                        newData.forEach { (lang, map) ->
+                            map[oldName] = map[newName] ?: ""
                         }
-                        nameWordMap[name] = newWord
                     }
                 }
-            } else {
-                // 项目中不存在该语言的字符，将excel表中的插入
-                v.forEach { (name, word) ->
-                    if (name.isNotBlank() && word.isNotEmpty()) {
-                        Log.e(TAG, "新增string：[name: $name, lang: $lang, 新值: $word]")
-                        val wordMap = resData.computeIfAbsent(lang) { linkedMapOf() }
-                        wordMap[name] = word
+            }
+        }
+        newData.forEach { (lang, map) ->
+            // 排除第一列
+            if (lang == colHead)
+                return@forEach
+            // 当前项目中一条包含多语种的string map
+            val nameWordMap = resData.computeIfAbsent(lang) { linkedMapOf() }
+            map.forEach { (name, newWord) ->
+                // 项目中存在该语言的字符，遍历每个的值，依次覆盖为excel中的新值
+                if (name.isNotEmpty() && newWord.isNotBlank()) {
+                    val oldWord = nameWordMap[name]
+                    if (oldWord != null && oldWord.isNotEmpty()) {
+                        if (oldWord != newWord) {
+                            Log.e(
+                                TAG,
+                                "替换string：[name: $name, lang: $lang, 旧值：$oldWord}, 新值：$newWord]"
+                            )
+                        }
+                    } else {
+                        Log.e(TAG, "新增string：[name: $name, lang: $lang, 新值: $newWord]")
                     }
+                    nameWordMap[name] = newWord
                 }
             }
         }

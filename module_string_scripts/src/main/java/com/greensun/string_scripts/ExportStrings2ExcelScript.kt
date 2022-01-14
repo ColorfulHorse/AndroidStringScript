@@ -25,10 +25,12 @@ fun main() {
     val excelWBook = XSSFWorkbook()
     moduleDirList.forEachIndexed { index, it ->
 
-        // 解析当前的多语言内容 <语言目录（如values-zh-rCN），<name，bean>>
+        // 解析当前项目的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
         val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
+        if (hashMap.isEmpty())
+            return
         // 将资源转换格式 <中文，<语言目录，值>>
-        val resData = WordHelper.transformResData(hashMap)
+        val resData = WordHelper.processSameWords(WordHelper.transformResData(hashMap))
 
         ExcelHelper.resource2File(
             "./module_string_scripts/strings.xlsx",

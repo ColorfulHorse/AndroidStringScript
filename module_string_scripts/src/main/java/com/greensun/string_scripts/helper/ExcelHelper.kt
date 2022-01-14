@@ -170,7 +170,6 @@ object ExcelHelper {
                 cell.setCellValue(s)
             }
 
-            // 对应的表头翻译中文
             val newCsvCn = ArrayList<String>()
             head.forEach {
                 newCsvCn.add(LanguageKeyMap.map[it] ?: "")
@@ -183,16 +182,12 @@ object ExcelHelper {
 
             // 填充多语言的翻译
             var index = 2
-            // <中文，<语言目录，值>>
             res.forEach { (key, value) ->
-                Log.d(TAG, "--->>> $key")
                 val row = getRow(excelWSheet, index)
-
                 head.forEachIndexed { index, h ->
                     val resWord = value[h]
                     val subCell = getCell(row, index)
                     subCell.setCellValue(resWord)
-                    Log.d(TAG, "${LanguageKeyMap.map[head[index]]}: $key -> $resWord")
                 }
 
                 index++
