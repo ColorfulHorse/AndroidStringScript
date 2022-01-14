@@ -187,7 +187,7 @@ object WordHelper {
             /**
              * 1. excel中某个string name匹配到了项目中的某个string name
              * 2. 找到项目中和该string基准语言的内容相同的其他string
-             * 3. 将这些string视为相同的string，覆盖/添加为excel中的值
+             * 3. 将这些string视为相同的string，复制一份添加到newData中
              */
             val baseLang = if (resData.containsKey(BASE_LANG)) BASE_LANG else DEFAULT_LANG
             val baseLangMap = newData[baseLang]
@@ -208,6 +208,7 @@ object WordHelper {
                 }
             }
         }
+        // 遍历更新项目string
         newData.forEach { (lang, map) ->
             // 排除第一列
             if (lang == colHead)
