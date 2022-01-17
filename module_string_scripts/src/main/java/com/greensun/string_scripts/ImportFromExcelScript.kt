@@ -41,7 +41,7 @@ fun main() {
             val newLangNameMap = WordHelper.revertResData(newData)
             val parentFile = File(it, "src/main/res")
             // 项目中读出的string map，<语言目录（如values-zh-rCN），<name，word>>
-            var resLangNameMap = WordHelper.collectRes(parentFile)
+            var resLangNameMap = ExcelHelper.collectRes(parentFile)
             WordHelper.mergeLangNameString(newLangNameMap, resLangNameMap)
             if (useInclude) {
                 resLangNameMap = resLangNameMap.filterKeys { lang ->

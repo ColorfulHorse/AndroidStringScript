@@ -7,11 +7,16 @@ import org.apache.poi.xssf.usermodel.XSSFCell
 import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
+import org.xml.sax.Attributes
+import org.xml.sax.helpers.DefaultHandler
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
+import java.util.regex.Pattern
+import javax.xml.parsers.DocumentBuilderFactory
+import javax.xml.parsers.SAXParserFactory
 import kotlin.collections.LinkedHashMap
 
 /**
@@ -215,5 +220,33 @@ object ExcelHelper {
 
     private fun getCell(row: XSSFRow, colNum: Int): XSSFCell {
         return row.getCell(colNum, MissingCellPolicy.RETURN_BLANK_AS_NULL) ?: row.createCell(colNum)
+    }
+
+    /**
+     * 解析当前的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
+     */
+    fun collectRes(res: File): LinkedHashMap<String, LinkedHashMap<String, String>> {
+        val hashMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
+        hashMap[WordHelper.colHead] = LinkedHashMap()
+        val factory = DocumentBuilderFactory.newInstance()
+        val builder = factory.newDocumentBuilder()
+        res.listFiles().forEach { langDir ->
+            val stringFile = File(langDir, "strings.xml")
+            if (!stringFile.exists())
+                return@forEach
+            val data = LinkedHashMap<String, String>()
+            // 收集所有string name
+            val names = hashMap.computeIfAbsent(WordHelper.colHead) { LinkedHashMap() }
+            val doc = builder.parse(stringFile)
+            val nodeList = doc.getElementsByTagName("string")
+            for (idx in 0 until nodeList.length) {
+                val node = nodeList.item(idx)
+                val name = node.attributes.getNamedItem("name").nodeValue
+                names[name] = name
+                data[name] = node.textContent
+            }
+            hashMap[langDir.name] = data
+        }
+        return hashMap
     }
 }

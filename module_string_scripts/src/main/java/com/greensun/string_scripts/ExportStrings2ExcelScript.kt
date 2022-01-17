@@ -26,11 +26,14 @@ fun main() {
     moduleDirList.forEachIndexed { index, it ->
 
         // 解析当前项目的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
-        val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
+        val hashMap = ExcelHelper.collectRes(File(it, "src/main/res"))
         if (hashMap.isEmpty())
             return
+        val nameLangMap = WordHelper.transformResData(hashMap)
+        if (nameLangMap.isEmpty())
+            return
         // 将资源转换格式 <name，<语言目录，值>>
-        val resData = WordHelper.processSameWords(WordHelper.transformResData(hashMap))
+        val resData = WordHelper.processSameWords(nameLangMap)
 
         ExcelHelper.resource2File(
             "./module_string_scripts/strings.xlsx",
