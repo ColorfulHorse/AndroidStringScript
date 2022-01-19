@@ -7,16 +7,17 @@ import org.apache.poi.xssf.usermodel.XSSFCell
 import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import org.xml.sax.Attributes
-import org.xml.sax.helpers.DefaultHandler
+import org.w3c.dom.Node
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
 import java.io.IOException
 import java.util.*
-import java.util.regex.Pattern
 import javax.xml.parsers.DocumentBuilderFactory
-import javax.xml.parsers.SAXParserFactory
+import javax.xml.transform.OutputKeys
+import javax.xml.transform.TransformerFactory
+import javax.xml.transform.dom.DOMSource
+import javax.xml.transform.stream.StreamResult
 import kotlin.collections.LinkedHashMap
 
 /**
@@ -25,6 +26,8 @@ import kotlin.collections.LinkedHashMap
 object ExcelHelper {
 
     private val TAG = ExcelHelper.javaClass.simpleName
+    private const val ROOT_TAG = "resources"
+    private const val TAG_NAME = "string"
 
     /**
      * 获取excel某个表的数据  <表名，<name，<语言目录，值>>>
@@ -248,5 +251,65 @@ object ExcelHelper {
             hashMap[langDir.name] = data
         }
         return hashMap
+    }
+
+    fun importWords(newLangNameMap: LinkedHashMap<String, LinkedHashMap<String, String>>, parentDir: File) {
+        val factory = DocumentBuilderFactory.newInstance()
+        val builder = factory.newDocumentBuilder()
+        newLangNameMap.forEach { (langDir, hashMap) ->
+            if (langDir.startsWith("values")) {
+                val stringFile = File(parentDir, "$langDir/strings.xml")
+                if (stringFile.exists()) {
+                    val doc = builder.parse(stringFile)
+                    val nodeList = doc.getElementsByTagName(TAG_NAME)
+                    val nodeMap = linkedMapOf<String, Node>()
+                    for (idx in 0 until nodeList.length) {
+                        val node = nodeList.item(idx)
+                        val name = node.attributes.getNamedItem("name").nodeValue
+                        nodeMap[name] = node
+                    }
+                    val root = doc.getElementsByTagName(ROOT_TAG).item(0)
+                    hashMap.forEach { (name, word) ->
+                        val node = nodeMap[name]
+                        if (node == null) {
+                            val element = doc.createElement(TAG_NAME)
+                            element.setAttribute("name", name)
+                            element.textContent = word
+                            root.appendChild(element)
+                        } else {
+                            if (node.textContent != word) {
+                                node.textContent = word
+                            }
+                        }
+                    }
+                    doc.xmlStandalone = true
+                    // 输出xml
+                    val transform = TransformerFactory.newInstance().newTransformer()
+                    val ds = DOMSource(doc)
+                    val result = StreamResult(stringFile)
+                    transform.transform(ds, result)
+                } else {
+                    parentDir.mkdirs()
+                    stringFile.createNewFile()
+                    val doc = builder.newDocument()
+                    val root = doc.createElement(ROOT_TAG)
+                    hashMap.forEach { (name, word) ->
+                        val element = doc.createElement(TAG_NAME)
+                        element.setAttribute("name", name)
+                        element.textContent = word
+                        root.appendChild(element)
+                    }
+                    doc.xmlStandalone = true
+                    // 输出xml
+                    val transform = TransformerFactory.newInstance().newTransformer()
+                    transform.setOutputProperty(OutputKeys.OMIT_XML_DECLARATION, "false")
+                    transform.setOutputProperty(OutputKeys.INDENT, "yes")
+//                    transform.setOutputProperty("{http://xml.apache.org/xalan}indent-amount", "4")
+                    val ds = DOMSource(doc)
+                    val result = StreamResult(stringFile)
+                    transform.transform(ds, result)
+                }
+            }
+        }
     }
 }

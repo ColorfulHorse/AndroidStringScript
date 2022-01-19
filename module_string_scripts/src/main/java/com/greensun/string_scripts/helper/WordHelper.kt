@@ -249,16 +249,4 @@ object WordHelper {
             }
         }
     }
-
-    /**
-     * [data] <语言目录（如values-zh-rCN），<name，word>>
-     */
-    fun importWords(data: LinkedHashMap<String, LinkedHashMap<String, String>>, parentFile: File) {
-        data.forEach { (langDir, hashMap) ->
-            if (langDir.startsWith("values")) {
-                val stringFile = File(parentFile, "$langDir/strings.xml")
-                OutputHelper.writeFile(stringFile, hashMap, langDir)
-            }
-        }
-    }
 }

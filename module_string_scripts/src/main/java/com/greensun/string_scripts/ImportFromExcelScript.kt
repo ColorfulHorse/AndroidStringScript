@@ -25,7 +25,7 @@ fun main() {
         if (file.name.startsWith(".")) return@listFiles false
         // 过滤文件
         if (!file.isDirectory) return@listFiles false
-        // 中文资源文件，做为key，必须有
+
         val f1 = File(file.absolutePath, "src/main/res/values/strings.xml")
         if (f1.exists()) return@listFiles true
         return@listFiles false
@@ -48,7 +48,7 @@ fun main() {
                     importInclude.contains(lang)
                 } as LinkedHashMap<String, LinkedHashMap<String, String>>
             }
-            WordHelper.importWords(resLangNameMap, parentFile)
+            ExcelHelper.importWords(resLangNameMap, parentFile)
         }
     }
 }

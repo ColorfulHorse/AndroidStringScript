@@ -1,6 +1,6 @@
-<resources>
+<?xml version="1.0" encoding="UTF-8"?><resources>
     <string name="app_name">AndroidStringScript</string>
-    <string name="test1">test1</string>
+    <string name="test1">test11111</string>
     <string name="test2">test2</string>
     <string name="test3">test3</string>
     <string name="test4">test4</string>
@@ -100,4 +100,4 @@
     <string name="test98">test98</string>
     <string name="test99">test99</string>
     <string name="test100">test100</string>
-</resources>
+<string name="test101">test101</string></resources>
