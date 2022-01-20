@@ -5,18 +5,12 @@ import com.greensun.string_scripts.helper.WordHelper
 import com.greensun.string_scripts.logger.Log
 import java.io.File
 
-// 是否只导入指定语言
-const val useInclude = false
-
-// 指定语言
-val importInclude = listOf<String>(
-    "values-ja-rJP",
-    "values-ko-rKR",
-    "values-ar"
-)
-
 /**
- * 从excel导入string
+ * Author : greensunliao
+ * Date   : 2022/1/20
+ * Email  : liao962381394@sina.cn
+ * Blog   : https://juejin.cn/user/3263006244363095
+ * Desc   : 从excel导入string到项目中
  */
 fun main() {
     val f = File("./")
@@ -32,8 +26,7 @@ fun main() {
     }
     // 打印相关可以使用的模块
     Log.i("ImportFromExcelScript", moduleDirList?.map { it.name }.toString())
-    val filePath = "./module_string_scripts/strings.xlsx"
-    val sheetsData = ExcelHelper.getSheetsData(filePath)
+    val sheetsData = ExcelHelper.getSheetsData(Config.INPUT_PATH)
     moduleDirList.forEach {
         // 模块名对应excel表数据  <name，<语言目录，值>>
         val newData = sheetsData[it.name]
@@ -44,9 +37,9 @@ fun main() {
             // todo 收集的同时进行合并
             var resLangNameMap = WordHelper.collectRes(parentFile)
             WordHelper.mergeLangNameString(newLangNameMap, resLangNameMap)
-            if (useInclude) {
+            if (Config.useInclude) {
                 resLangNameMap = resLangNameMap.filterKeys { lang ->
-                    importInclude.contains(lang)
+                    Config.importInclude.contains(lang)
                 } as LinkedHashMap<String, LinkedHashMap<String, String>>
             }
             WordHelper.importWords(resLangNameMap, parentFile)

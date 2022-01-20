@@ -7,7 +7,11 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook
 import java.io.File
 
 /**
- * 导出项目string到excel
+ * Author : greensunliao
+ * Date   : 2022/1/20
+ * Email  : liao962381394@sina.cn
+ * Blog   : https://juejin.cn/user/3263006244363095
+ * Desc   : 导出项目string到excel
  */
 fun main() {
     // 查找当前项目的模块
@@ -36,7 +40,7 @@ fun main() {
         val resData = WordHelper.processSameWords(nameLangMap)
 
         ExcelHelper.resource2File(
-            "./module_string_scripts/strings.xlsx",
+            Config.OUTPUT_PATH,
             it.name,
             hashMap.keys.toList() as ArrayList<String>,
             resData, excelWBook, index, (moduleDirList.size - 1)

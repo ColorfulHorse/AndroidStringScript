@@ -1,5 +1,6 @@
 package com.greensun.string_scripts.helper
 
+import com.greensun.string_scripts.Config
 import com.greensun.string_scripts.logger.Log
 import org.dom4j.Document
 import org.dom4j.DocumentHelper
@@ -16,16 +17,8 @@ object WordHelper {
 
     // 第一列存放string的name，作为第二表头
     const val colHead = "name"
-    private const val DEFAULT_LANG = "values"
-    private const val BASE_LANG = "values-zh-rCN"
     private const val ROOT_TAG = "resources"
     private const val TAG_NAME = "string"
-
-    // 是否将基准语言的值相同（即使name不同）的string也视为同一个string
-    // 比如以中文为基准，那么<string name="name1">相同值</string> 等同于 <string name="name2">相同值</string>
-    // 这样的话可以以某一语言为基准[导出时去重/导入时恢复]恢复内容重复的string
-    // 导入导出时应该用同一个基准
-    private const val isBaseOnWord = true
 
     /**
      *  处理可能出现的相同内容但是不同key的string
@@ -34,10 +27,10 @@ object WordHelper {
      */
     fun processSameWords(source: LinkedHashMap<String, LinkedHashMap<String, String>>): LinkedHashMap<String, LinkedHashMap<String, String>> {
         // 由于可能存在不同key但是相同内容的string，导出时将内容相同的string聚合到一起
-        val haveCNKey = source.entries.first().value.containsKey(BASE_LANG)
-        val baseLang = if (haveCNKey) BASE_LANG else DEFAULT_LANG
+        val haveCNKey = source.entries.first().value.containsKey(Config.BASE_LANG)
+        val baseLang = if (haveCNKey) Config.BASE_LANG else Config.DEFAULT_LANG
         // 是否根据中文或者默认语言的内容为基准去重，否则将相同的内容行排序到一起
-        return if (isBaseOnWord) {
+        return if (Config.isBaseOnWord) {
             // 去重
             source.entries.distinctBy {
                 val baseWord = it.value[baseLang]
@@ -153,13 +146,13 @@ object WordHelper {
         newData: LinkedHashMap<String, LinkedHashMap<String, String>>,
         resData: LinkedHashMap<String, LinkedHashMap<String, String>>
     ) {
-        if (isBaseOnWord) {
+        if (Config.isBaseOnWord) {
             /**
              * 1. excel中某个string name匹配到了项目中的某个string name
              * 2. 找到项目中和该string基准语言的内容相同的其他string
              * 3. 将这些string视为相同的string，复制一份添加到newData中
              */
-            val baseLang = if (resData.containsKey(BASE_LANG)) BASE_LANG else DEFAULT_LANG
+            val baseLang = if (resData.containsKey(Config.BASE_LANG)) Config.BASE_LANG else Config.DEFAULT_LANG
             val baseLangMap = newData[baseLang]
             if (baseLangMap != null) {
                 // 寻找基准值相同的string

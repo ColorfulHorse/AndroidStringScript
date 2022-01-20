@@ -15,13 +15,15 @@ import java.util.*
 import kotlin.collections.LinkedHashMap
 
 /**
- * 导入导出excel
+ * Author : greensunliao
+ * Date   : 2022/1/20
+ * Email  : liao962381394@sina.cn
+ * Blog   : https://juejin.cn/user/3263006244363095
+ * Desc   : excel操作类
  */
 object ExcelHelper {
 
     private val TAG = ExcelHelper.javaClass.simpleName
-    private const val ROOT_TAG = "resources"
-    private const val TAG_NAME = "string"
 
     /**
      * 获取excel某个表的数据  <表名，<name，<语言目录，值>>>
