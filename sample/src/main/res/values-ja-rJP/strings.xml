@@ -1,4 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?><resources>
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
     <string name="app_name">AndroidStringScript</string>
     <string name="test1">テスト1</string>
     <string name="test2">テスト2</string>

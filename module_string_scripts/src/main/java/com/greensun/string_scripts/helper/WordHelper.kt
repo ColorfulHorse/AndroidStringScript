@@ -1,8 +1,13 @@
 package com.greensun.string_scripts.helper
 
 import com.greensun.string_scripts.logger.Log
+import org.dom4j.Document
+import org.dom4j.DocumentHelper
+import org.dom4j.Element
+import org.dom4j.io.OutputFormat
+import org.dom4j.io.SAXReader
+import org.dom4j.io.XMLWriter
 import java.io.*
-import java.util.regex.Pattern
 
 object WordHelper {
 
@@ -13,6 +18,8 @@ object WordHelper {
     const val colHead = "name"
     private const val DEFAULT_LANG = "values"
     private const val BASE_LANG = "values-zh-rCN"
+    private const val ROOT_TAG = "resources"
+    private const val TAG_NAME = "string"
 
     // 是否将基准语言的值相同（即使name不同）的string也视为同一个string
     // 比如以中文为基准，那么<string name="name1">相同值</string> 等同于 <string name="name2">相同值</string>
@@ -92,53 +99,6 @@ object WordHelper {
         return resData
     }
 
-//    /**
-//     * 解析当前的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
-//     */
-//    fun collectRes(res: File): LinkedHashMap<String, LinkedHashMap<String, String>> {
-//        val hashMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
-//        val regexStr =
-//            "^\\s*<\\s*string\\s+name\\s*=\\s*\"(.*?)\"\\s*formatted=\"false\"\\s*>(.*?)</\\s*string\\s*>\\s*\$"
-//
-//        val regexStr2 =
-//            "^\\s*<\\s*string\\s+name\\s*=\\s*\"(.*?)\"\\s*>(.*?)</\\s*string\\s*>\\s*\$"
-//        // 添加string name作为第一列，用作索引
-//        hashMap[colHead] = LinkedHashMap()
-//        res.listFiles().forEach {
-//            val data = LinkedHashMap<String, String>()
-//            // 收集所有string name
-//            val names = hashMap.computeIfAbsent(colHead) { LinkedHashMap() }
-//            val stringFile = File(it, "strings.xml")
-//            if (stringFile.exists()) {
-//                // 将xml内容读取
-//                stringFile.readLines(Charsets.UTF_8).forEach { line ->
-//                    val p = Pattern.compile(regexStr)
-//                    val groups = p.matcher(line)
-//                    if (groups.find() && groups.groupCount() == 2) {
-//                        val name = groups.group(1)
-//                        val value = groups.group(2)
-//                        names[name] = name
-//                        data[name] = value
-//                    } else {
-//                        // 使用第二个规则获取
-//                        val p2 = Pattern.compile(regexStr2)
-//                        val groups2 = p2.matcher(line)
-//                        if (groups2.find() && groups2.groupCount() == 2) {
-//                            val name = groups2.group(1)
-//                            val value = groups2.group(2)
-//                            names[name] = name
-//                            data[name] = value
-//                        }
-//                    }
-//                }
-//                hashMap[it.name] = data
-//                Log.d(TAG, "${res.parent} : 语言${it.name} 有: ${data.size} 个")
-//            }
-//        }
-//        return hashMap
-//    }
-
-
     /**
      * 将excel中string合并到项目原本string中，不存在则追加，存在则覆盖
      * [newData] excel中读出的string <name，<语言目录，word>>
@@ -213,7 +173,9 @@ object WordHelper {
                     }?.keys
                 }
                 sameWords.forEach { pair ->
-                    Log.e(TAG, "newName:${pair.first} mapping old names:${pair.second}")
+                    if (pair.second?.size ?: 0 > 1) {
+                        Log.e(TAG, "newName:${pair.first} mapping old names:${pair.second}")
+                    }
                     val newName = pair.first
                     pair.second?.forEach { oldName ->
                         newData.forEach { (lang, map) ->
@@ -247,6 +209,127 @@ object WordHelper {
                     nameWordMap[name] = newWord
                 }
             }
+        }
+    }
+
+    /**
+     * 解析当前的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
+     */
+    fun collectRes(res: File): LinkedHashMap<String, LinkedHashMap<String, String>> {
+        val hashMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
+        hashMap[WordHelper.colHead] = LinkedHashMap()
+        val saxReader = SAXReader()
+        res.listFiles().forEach { langDir ->
+            val stringFile = File(langDir, "strings.xml")
+            if (!stringFile.exists())
+                return@forEach
+            val data = LinkedHashMap<String, String>()
+            // 收集所有string name
+            val names = hashMap.computeIfAbsent(WordHelper.colHead) { LinkedHashMap() }
+            val doc = saxReader.read(stringFile)
+            val root = doc.rootElement
+            if (root.name == ROOT_TAG) {
+                val iterator = root.elementIterator()
+                while (iterator.hasNext()) {
+                    val element = iterator.next()
+                    if (element.name == TAG_NAME) {
+                        val name = element.attribute("name").text
+                        val word = element.text
+                        names[name] = name
+                        data[name] = word
+                    }
+                }
+            }
+            hashMap[langDir.name] = data
+        }
+        return hashMap
+    }
+
+    /**
+     * 将excel中string导入到项目
+     */
+    fun importWords(newLangNameMap: LinkedHashMap<String, LinkedHashMap<String, String>>, parentDir: File) {
+        newLangNameMap.forEach { (langDir, hashMap) ->
+            if (langDir.startsWith("values")) {
+                val stringFile = File(parentDir, "$langDir/strings.xml")
+                if (stringFile.exists()) {
+                    // 修改原本dom
+                    val saxReader = SAXReader()
+                    val doc = saxReader.read(stringFile)
+                    val root = doc.rootElement
+                    val nodeMap = linkedMapOf<String, Element>()
+                    if (root.name == ROOT_TAG) {
+                        val iterator = root.elementIterator()
+                        while (iterator.hasNext()) {
+                            val element = iterator.next()
+                            if (element.name == TAG_NAME) {
+                                val name = element.attribute("name").text
+                                nodeMap[name] = element
+                            }
+                        }
+                    }
+                    hashMap.forEach { (name, word) ->
+                        val node = nodeMap[name]
+                        if (node == null) {
+                            root.addElement(TAG_NAME)
+                                .addAttribute("name", name)
+                                .addText(word)
+                        } else {
+                            if (node.text != word) {
+                                node.text = word
+                            }
+                        }
+                    }
+                    outputStringFile(doc, stringFile)
+                } else {
+                    // 创建新dom
+                    val langFile = File(parentDir, langDir)
+                    langFile.mkdirs()
+                    stringFile.createNewFile()
+                    val doc = DocumentHelper.createDocument()
+                    val root = doc.addElement(ROOT_TAG)
+                    hashMap.forEach { (name, word) ->
+                        val element = root.addElement(TAG_NAME)
+                        element.addAttribute("name", name)
+                            .addText(word)
+                    }
+                    outputStringFile(doc, stringFile)
+                }
+            }
+        }
+    }
+
+    /**
+     * 输出string文件
+     */
+    private fun outputStringFile(doc: Document, file: File) {
+        // 遍历所有节点，移除掉原本的换行符节点，否则输出时会因为newlines多出换行符
+        val root = doc.rootElement
+        if (root.name == ROOT_TAG) {
+            val iterator = root.nodeIterator()
+            while (iterator.hasNext()) {
+                val element = iterator.next()
+                if (element.nodeType == org.dom4j.Node.TEXT_NODE) {
+                    if (element.text.isBlank()) {
+                        iterator.remove()
+                    }
+                }
+            }
+        }
+        // 输出
+        val format = OutputFormat()
+        format.encoding = "utf-8"
+        format.setIndentSize(4)
+        format.isNewLineAfterDeclaration = false
+        format.isNewlines = true
+        format.lineSeparator = System.getProperty("line.separator")
+        file.outputStream().use { os ->
+            val writer = XMLWriter(os, format)
+            // 是否将字符转义
+            writer.isEscapeText = false
+            writer.write(doc)
+            writer.flush()
+            writer.close()
         }
     }
 }

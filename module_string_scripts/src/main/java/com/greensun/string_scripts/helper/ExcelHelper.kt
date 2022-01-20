@@ -7,12 +7,6 @@ import org.apache.poi.xssf.usermodel.XSSFCell
 import org.apache.poi.xssf.usermodel.XSSFRow
 import org.apache.poi.xssf.usermodel.XSSFSheet
 import org.apache.poi.xssf.usermodel.XSSFWorkbook
-import org.dom4j.Document
-import org.dom4j.DocumentHelper
-import org.dom4j.Element
-import org.dom4j.io.OutputFormat
-import org.dom4j.io.SAXReader
-import org.dom4j.io.XMLWriter
 import java.io.File
 import java.io.FileInputStream
 import java.io.FileOutputStream
@@ -223,100 +217,5 @@ object ExcelHelper {
 
     private fun getCell(row: XSSFRow, colNum: Int): XSSFCell {
         return row.getCell(colNum, MissingCellPolicy.RETURN_BLANK_AS_NULL) ?: row.createCell(colNum)
-    }
-
-    /**
-     * 解析当前的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
-     */
-    fun collectRes(res: File): LinkedHashMap<String, LinkedHashMap<String, String>> {
-        val hashMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
-        hashMap[WordHelper.colHead] = LinkedHashMap()
-        val saxReader = SAXReader()
-        res.listFiles().forEach { langDir ->
-            val stringFile = File(langDir, "strings.xml")
-            if (!stringFile.exists())
-                return@forEach
-            val data = LinkedHashMap<String, String>()
-            // 收集所有string name
-            val names = hashMap.computeIfAbsent(WordHelper.colHead) { LinkedHashMap() }
-            val doc = saxReader.read(stringFile)
-            val root = doc.rootElement
-            if (root.name == ROOT_TAG) {
-                val iterator = root.elementIterator()
-                while (iterator.hasNext()) {
-                    val element = iterator.next()
-                    if (element.name == TAG_NAME) {
-                        val name = element.attribute("name").text
-                        val word = element.text
-                        Log.e(TAG, "name: $name, word: $word")
-                        names[name] = name
-                        data[name] = word
-                    }
-                }
-            }
-            hashMap[langDir.name] = data
-        }
-        return hashMap
-    }
-
-    fun importWords(newLangNameMap: LinkedHashMap<String, LinkedHashMap<String, String>>, parentDir: File) {
-
-        newLangNameMap.forEach { (langDir, hashMap) ->
-            if (langDir.startsWith("values")) {
-                val stringFile = File(parentDir, "$langDir/strings.xml")
-                if (stringFile.exists()) {
-                    val saxReader = SAXReader()
-                    val doc = saxReader.read(stringFile)
-                    val root = doc.rootElement
-                    val nodeMap = linkedMapOf<String, Element>()
-                    if (root.name == ROOT_TAG) {
-                        val iterator = root.elementIterator()
-                        while (iterator.hasNext()) {
-                            val element = iterator.next()
-                            if (element.name == TAG_NAME) {
-                                val name = element.attribute("name").text
-                                nodeMap[name] = element
-                            }
-                        }
-                    }
-                    hashMap.forEach { (name, word) ->
-                        val node = nodeMap[name]
-                        if (node == null) {
-                            root.addElement(TAG_NAME)
-                                .addAttribute("name", name)
-                                .addText(word)
-                        } else {
-                            if (node.text != word) {
-                                node.text = word
-                            }
-                        }
-                    }
-                    createStringFile(doc, stringFile)
-                } else {
-                    parentDir.mkdirs()
-                    stringFile.createNewFile()
-                    val doc = DocumentHelper.createDocument()
-                    val root = doc.addElement(ROOT_TAG)
-                    hashMap.forEach { (name, word) ->
-                        val element = root.addElement(TAG_NAME)
-                        element.addAttribute("name", name)
-                            .addText(word)
-                    }
-                    createStringFile(doc, stringFile)
-                }
-            }
-        }
-    }
-
-    private fun createStringFile(doc: Document, file: File) {
-        var format = OutputFormat.createPrettyPrint()
-        format.setIndentSize(4)
-        format.isNewlines = true
-        format.lineSeparator = System.getProperty("line.separator")
-        file.outputStream().use { os ->
-            val writer = XMLWriter(os, format)
-            writer.write(doc)
-            writer.close()
-        }
     }
 }

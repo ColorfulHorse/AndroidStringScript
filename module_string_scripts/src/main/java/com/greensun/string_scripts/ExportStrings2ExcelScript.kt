@@ -26,7 +26,7 @@ fun main() {
     moduleDirList.forEachIndexed { index, it ->
 
         // 解析当前项目的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
-        val hashMap = ExcelHelper.collectRes(File(it, "src/main/res"))
+        val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
         if (hashMap.isEmpty())
             return
         val nameLangMap = WordHelper.transformResData(hashMap)
