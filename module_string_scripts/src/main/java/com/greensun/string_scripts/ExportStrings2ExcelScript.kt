@@ -15,7 +15,7 @@ import java.io.File
  */
 fun main() {
     // 查找当前项目的模块
-    val f = File("./")
+    val f = File(Config.EXPORT_PROJECT_PATH)
     val moduleDirList = f.listFiles { file ->
         // 过滤隐藏文件
         if (file.name.startsWith(".")) return@listFiles false
@@ -33,10 +33,10 @@ fun main() {
         val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
         if (hashMap.isEmpty())
             return
+        // 将资源转换结构 <name，<语言目录，值>>
         val nameLangMap = WordHelper.transformResData(hashMap)
         if (nameLangMap.isEmpty())
             return
-        // 将资源转换格式 <name，<语言目录，值>>
         val resData = WordHelper.processSameWords(nameLangMap)
 
         ExcelHelper.resource2File(

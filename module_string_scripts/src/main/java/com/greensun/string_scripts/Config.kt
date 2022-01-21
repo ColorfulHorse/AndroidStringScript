@@ -12,6 +12,9 @@ object Config {
     // 导入导出时的excel路径
     const val OUTPUT_PATH = "./module_string_scripts/output.xlsx"
     const val INPUT_PATH = "./module_string_scripts/input.xlsx"
+    // 需要导入导出的项目目录
+    const val EXPORT_PROJECT_PATH = "./"
+    const val IMPORT_PROJECT_PATH = "./"
 
     // 是否只导入指定语言
     const val useInclude = false

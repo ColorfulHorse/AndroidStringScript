@@ -13,8 +13,8 @@ import java.io.File
  * Desc   : 从excel导入string到项目中
  */
 fun main() {
-    val f = File("./")
-    val moduleDirList = f.listFiles { file ->
+    val root = File(Config.IMPORT_PROJECT_PATH)
+    val moduleDirList = root.listFiles { file ->
         // 过滤隐藏文件
         if (file.name.startsWith(".")) return@listFiles false
         // 过滤文件
