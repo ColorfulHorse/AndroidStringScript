@@ -12,11 +12,11 @@ import java.io.*
 
 object WordHelper {
 
-    private val TAG = "WordHelper"
+    private const val TAG = "WordHelper"
 
 
     // 第一列存放string的name，作为第二表头
-    const val colHead = "name"
+    private const val colHead = "name"
     private const val ROOT_TAG = "resources"
     private const val TAG_NAME = "string"
 
@@ -178,11 +178,19 @@ object WordHelper {
                 }
             }
         }
+        resData.keys.reversed().forEach {
+            if (!newData.keys.contains(it)) {
+                resData.remove(it)
+                // excel中不存的语言列直接移除掉，不参与合并
+                Log.e(TAG, "new data have no lang dir：$it, skip")
+            }
+        }
         // 遍历更新项目string
         newData.forEach { (lang, map) ->
             // 排除第一列
             if (lang == colHead)
                 return@forEach
+            var hasChanged = false
             // 当前项目中一条包含多语种的string map
             val nameWordMap = resData.computeIfAbsent(lang) { linkedMapOf() }
             map.forEach { (name, newWord) ->
@@ -191,16 +199,23 @@ object WordHelper {
                     val oldWord = nameWordMap[name]
                     if (oldWord != null && oldWord.isNotEmpty()) {
                         if (oldWord != newWord) {
+                            hasChanged = true
                             Log.e(
                                 TAG,
                                 "替换string：[name: $name, lang: $lang, 旧值：$oldWord}, 新值：$newWord]"
                             )
                         }
                     } else {
+                        hasChanged = true
                         Log.e(TAG, "新增string：[name: $name, lang: $lang, 新值: $newWord]")
                     }
                     nameWordMap[name] = newWord
                 }
+            }
+            if (!hasChanged) {
+                // 该语言string内容没有变动，也跳过
+                resData.remove(lang)
+                Log.e(TAG, "lang dir $lang have no change, skip")
             }
         }
     }
@@ -210,7 +225,7 @@ object WordHelper {
      */
     fun collectRes(res: File): LinkedHashMap<String, LinkedHashMap<String, String>> {
         val hashMap = LinkedHashMap<String, LinkedHashMap<String, String>>()
-        hashMap[WordHelper.colHead] = LinkedHashMap()
+        hashMap[colHead] = LinkedHashMap()
         val saxReader = SAXReader()
         res.listFiles().forEach { langDir ->
             val stringFile = File(langDir, "strings.xml")
@@ -218,7 +233,7 @@ object WordHelper {
                 return@forEach
             val data = LinkedHashMap<String, String>()
             // 收集所有string name
-            val names = hashMap.computeIfAbsent(WordHelper.colHead) { LinkedHashMap() }
+            val names = hashMap.computeIfAbsent(colHead) { LinkedHashMap() }
             val doc = saxReader.read(stringFile)
             val root = doc.rootElement
             if (root.name == ROOT_TAG) {
@@ -243,6 +258,7 @@ object WordHelper {
      */
     fun importWords(newLangNameMap: LinkedHashMap<String, LinkedHashMap<String, String>>, parentDir: File) {
         newLangNameMap.forEach { (langDir, hashMap) ->
+            Log.e(TAG, "import lang dir $langDir")
             if (langDir.startsWith("values")) {
                 val stringFile = File(parentDir, "$langDir/strings.xml")
                 if (stringFile.exists()) {
@@ -290,6 +306,25 @@ object WordHelper {
                 }
             }
         }
+    }
+
+    /**
+     * 转义，string标签中单双引号不转义无法显示
+     * 这里通过加\转义，兼容原有string
+     */
+    fun escapeText(text: String): String {
+        var last = '0'
+        val builder = text.toCharArray().fold(StringBuilder()) { acc, char ->
+            val piece = when(char) {
+                '"' -> if (last != '\\') "\\\"" else char
+                '\'' -> if (last != '\\') "\\\'" else char
+                else -> char
+            }
+            acc.append(piece)
+            last = char
+            acc
+        }
+        return builder.toString()
     }
 
     /**

@@ -53,7 +53,9 @@ object ExcelHelper {
                     Log.d(TAG, "第${row}行，name = $name")
                     val v = LinkedHashMap<String, String>()
                     for (col in 0 until colCount) {
-                        v[head[col]] = getCellData(excelWBook, sheetName, row, col)
+                        val content = getCellData(excelWBook, sheetName, row, col)
+                        val text = WordHelper.escapeText(content)
+                        v[head[col]] = text
                         Log.d(TAG, "key = ${head[col]} ,value = ${v[head[col]]}")
                     }
                     dataMap[name] = v
