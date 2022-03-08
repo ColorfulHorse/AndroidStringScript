@@ -32,11 +32,11 @@ fun main() {
         // 解析当前项目的多语言内容 <语言目录（如values-zh-rCN），<name，word>>
         val hashMap = WordHelper.collectRes(File(it, "src/main/res"))
         if (hashMap.isEmpty())
-            return
+            return@forEachIndexed
         // 将资源转换结构 <name，<语言目录，值>>
         val nameLangMap = WordHelper.transformResData(hashMap)
         if (nameLangMap.isEmpty())
-            return
+            return@forEachIndexed
         val resData = WordHelper.processSameWords(nameLangMap)
 
         ExcelHelper.resource2File(
