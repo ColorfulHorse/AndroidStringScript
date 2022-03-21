@@ -152,7 +152,8 @@ object WordHelper {
              * 2. 找到项目中和该string基准语言的内容相同的其他string
              * 3. 将这些string视为相同的string，复制一份添加到newData中
              */
-            val baseLang = if (resData.containsKey(Config.BASE_LANG)) Config.BASE_LANG else Config.DEFAULT_LANG
+            val baseLang = if (newData.containsKey(Config.BASE_LANG)) Config.BASE_LANG else Config.DEFAULT_LANG
+            Log.e(TAG, "baseLang: $baseLang")
             val baseLangMap = newData[baseLang]
             if (baseLangMap != null) {
                 // 寻找基准值相同的string
@@ -202,7 +203,7 @@ object WordHelper {
                             hasChanged = true
                             Log.e(
                                 TAG,
-                                "替换string：[name: $name, lang: $lang, 旧值：$oldWord}, 新值：$newWord]"
+                                "替换string：[name: $name, lang: $lang, 旧值：$oldWord, 新值：$newWord]"
                             )
                         }
                     } else {
