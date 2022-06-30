@@ -40,8 +40,9 @@ object ExcelHelper {
             excelWSheet.run {
                 // 总行数
                 val rowCount = lastRowNum - firstRowNum + 1
+                val firstRow = getRow(0)
                 // 总列数
-                val colCount = getRow(0).physicalNumberOfCells
+                val colCount = firstRow.lastCellNum - firstRow.firstCellNum
                 // 获取所有语言目录
                 for (col in 0 until colCount) {
                     head.add(getCellData(excelWBook, sheetName, 0, col))
