@@ -45,7 +45,7 @@ object WordHelper {
         return list.sortedWith(Comparator { a, b ->
             val baseWord = a.value[Config.SORT_LANG]
             val nextWord = b.value[Config.SORT_LANG]
-            if (baseWord === nextWord) return@Comparator 0
+            if (baseWord == nextWord) return@Comparator 0
             if (baseWord.isNullOrEmpty()) return@Comparator 1
             if (nextWord.isNullOrEmpty()) return@Comparator -1
             compareValuesBy(a, b) {
