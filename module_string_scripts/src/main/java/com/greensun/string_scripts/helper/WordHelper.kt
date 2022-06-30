@@ -30,30 +30,30 @@ object WordHelper {
         val haveCNKey = source.entries.first().value.containsKey(Config.BASE_LANG)
         val baseLang = if (haveCNKey) Config.BASE_LANG else Config.DEFAULT_LANG
         // 是否根据中文或者默认语言的内容为基准去重，否则将相同的内容行排序到一起
-        return if (Config.isBaseOnWord) {
+        var list = emptyList<MutableMap.MutableEntry<String, LinkedHashMap<String, String>>>()
+        if (Config.isBaseOnWord) {
             // 去重
-            source.entries.distinctBy {
+            list = source.entries.distinctBy {
                 val baseWord = it.value[baseLang]
                 return@distinctBy if (!baseWord.isNullOrBlank())
                     baseWord
                 else
                     it
-            }.fold(linkedMapOf()) { acc, entry ->
-                acc[entry.key] = entry.value
-                acc
             }
-        } else {
-            // 相同的排到一起
-            source.entries.sortedBy {
-                val baseWord = it.value[baseLang]
-                if (!baseWord.isNullOrEmpty())
-                    return@sortedBy baseWord
-                else
-                    return@sortedBy null
-            }.fold(linkedMapOf()) { acc, entry ->
-                acc[entry.key] = entry.value
-                acc
+        }
+        // 按文案字典顺序排序，把空行排在最后
+        return list.sortedWith(Comparator { a, b ->
+            val baseWord = a.value[Config.SORT_LANG]
+            val nextWord = b.value[Config.SORT_LANG]
+            if (baseWord === nextWord) return@Comparator 0
+            if (baseWord.isNullOrEmpty()) return@Comparator 1
+            if (nextWord.isNullOrEmpty()) return@Comparator -1
+            compareValuesBy(a, b) {
+                it.value[Config.SORT_LANG]
             }
+        }).fold(linkedMapOf()) { acc, entry ->
+            acc[entry.key] = entry.value
+            acc
         }
     }
 
@@ -116,7 +116,7 @@ object WordHelper {
                             if (oldWord != newWord) {
                                 Log.e(
                                     TAG,
-                                    "替换string：[name: $name, lang: $lang, 旧值：$oldWord}, 新值：$newWord]"
+                                    "替换string：[name: $name, lang: $lang, 旧值：$oldWord, 新值：$newWord]"
                                 )
                             }
                         } else {
@@ -229,6 +229,11 @@ object WordHelper {
         hashMap[colHead] = LinkedHashMap()
         val saxReader = SAXReader()
         res.listFiles().forEach { langDir ->
+            if (Config.useExportInclude) {
+                if (!Config.exportInclude.contains(langDir.name)) {
+                    return@forEach
+                }
+            }
             val stringFile = File(langDir, "strings.xml")
             if (!stringFile.exists())
                 return@forEach
@@ -244,8 +249,11 @@ object WordHelper {
                     if (element.name == TAG_NAME) {
                         val name = element.attribute("name").text
                         val word = element.text
-                        names[name] = name
-                        data[name] = word
+                        // 导出时排除
+                        if (!Config.exportExcludeNames.contains(name)) {
+                            names[name] = name
+                            data[name] = word
+                        }
                     }
                 }
             }

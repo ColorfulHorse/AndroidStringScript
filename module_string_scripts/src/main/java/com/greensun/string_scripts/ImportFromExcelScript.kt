@@ -37,7 +37,7 @@ fun main() {
             // todo 收集的同时进行合并
             var resLangNameMap = WordHelper.collectRes(parentFile)
             WordHelper.mergeLangNameString(newLangNameMap, resLangNameMap)
-            if (Config.useInclude) {
+            if (Config.useImportInclude) {
                 resLangNameMap = resLangNameMap.filterKeys { lang ->
                     Config.importInclude.contains(lang)
                 } as LinkedHashMap<String, LinkedHashMap<String, String>>
