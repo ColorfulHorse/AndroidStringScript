@@ -11,3 +11,7 @@
 ![image](https://user-images.githubusercontent.com/20135323/160737865-57cc68a8-d822-49e5-b6cb-0004c962ffa0.png)
 
 **博客 https://juejin.cn/post/7056708227060203534**
+
+### update history
+2022/6/30
+fix 包含空列时统计列数不正确问题
