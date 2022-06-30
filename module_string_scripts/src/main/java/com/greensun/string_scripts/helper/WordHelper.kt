@@ -30,10 +30,10 @@ object WordHelper {
         val haveCNKey = source.entries.first().value.containsKey(Config.BASE_LANG)
         val baseLang = if (haveCNKey) Config.BASE_LANG else Config.DEFAULT_LANG
         // 是否根据中文或者默认语言的内容为基准去重，否则将相同的内容行排序到一起
-        var list = emptyList<MutableMap.MutableEntry<String, LinkedHashMap<String, String>>>()
+        var list = source.entries.toList()
         if (Config.isBaseOnWord) {
             // 去重
-            list = source.entries.distinctBy {
+            list = list.distinctBy {
                 val baseWord = it.value[baseLang]
                 return@distinctBy if (!baseWord.isNullOrBlank())
                     baseWord
