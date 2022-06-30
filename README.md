@@ -12,7 +12,7 @@
 
 **博客 https://juejin.cn/post/7056708227060203534**
 
-### update history
-2022/6/30
-fix 包含空列时统计列数不正确问题
+## update history
+### 2022/6/30  
+fix 包含空列时统计列数不正确问题  
 feature 导出时根据某个语言的文案进行排序，把空行排到最后
