@@ -1,8 +1,14 @@
 # AndroidStringScript
 ## A library use for exporting and importing string resources of android project as an excel file
 ## Android String导入导出脚本，用于国际化翻译
+### How to use
+1. import module_string_scripts module into project
+2. edit configs of `Config.kt`
+3. run ExportStrings2ExcelScript.kt to get excel file
+4. save output file to translate
+5. run ImportFromExcelScript.kt to import and integrate strings after translating, **if set `isBaseOnWord` true，excel file should have a cross-refer colum(BASE_LANG/DEFAULT_LANG)when import**
 ### 使用方法
-1. 导入module_string_scripts模块到项目中
+1. 导入module_string_scripts模块到项目中 
 2. 更改Config类中的配置
 3. 运行ExportStrings2ExcelScript.kt 收集项目所有模块string.xml中的字符，导出为excel，模块名对应表名
 4. 把excel第一列保护起来，设为锁定，然后提供出去进行翻译
