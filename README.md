@@ -1,4 +1,5 @@
 # AndroidStringScript
+## A library use for exporting and importing string resources of android project as an excel file
 ## Android String导入导出脚本，用于国际化翻译
 ### 使用方法
 1. 导入module_string_scripts模块到项目中
